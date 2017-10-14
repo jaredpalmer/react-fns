@@ -14,6 +14,15 @@ Modern React components, hoc's, and utilities functions.
   - [DeviceOrientation](#deviceorientation)
   - [Network](#network)
   - [Scroll](#scroll)
+  - Geo
+  - Viewport
+  - InfiniteScroll
+  - MousePosition
+  - HoverArea
+  - Draggable
+  - Droppable
+  - Orderable
+  - Parallax
 - [Utility Components](#utility-components)
   - [`<Mailto />`](#mailto-)  
   - [`<Sms />`](#sms-)
