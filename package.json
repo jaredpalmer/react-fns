@@ -1,0 +1,71 @@
+{
+  "name": "react-fns",
+  "version": "0.0.0",
+  "description": "Modern React components, hoc's, and utilities functions. ",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest --env=jsdom",
+    "test:watch": "npm run test -- --watch",
+    "start":
+      "cross-env NODE_ENV=development tsc-watch --onSuccess \"rollup -c\"",
+    "prebuild": "rimraf dist",
+    "build":
+      "tsc && cross-env NODE_ENV=production rollup -c && cross-env NODE_ENV=development rollup -c && rimraf compiled",
+    "prepublish": "npm run build",
+    "format":
+      "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'test/**/*'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredpalmer/react-fns.git"
+  },
+  "keywords": ["react", "react-fns", "render-props", "hoc"],
+  "author": "Jared Palmer <jared@palmer.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaredpalmer/react-fns/issues"
+  },
+  "homepage": "https://github.com/jaredpalmer/react-fns#readme",
+  "devDependencies": {
+    "@types/jest": "20.0.6",
+    "@types/node": "^8.0.22",
+    "@types/prop-types": "15.5.1",
+    "@types/qs": "^6.5.0",
+    "@types/react": "16.0.2",
+    "@types/react-dom": "15.5.1",
+    "@types/react-test-renderer": "15.5.2",
+    "cross-env": "5.0.5",
+    "jest": "^20.0.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "rollup": "^0.47.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "ts-jest": "^20.0.10",
+    "ts-lint": "^4.5.1",
+    "tsc-watch": "1.0.8",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.4.2",
+    "rollup-plugin-commonjs": "^8.1.0",
+    "rollup-plugin-filesize": "^1.4.2",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-resolve": "0.0.1-predev.1",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-uglify": "^2.0.1"
+  },
+  "jest": {
+    "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "<rootDir>/test/**/*.ts?(x)",
+      "<rootDir>/test/**/?(*.)(spec|test).ts?(x)"
+    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "json"]
+  },
+  "dependencies": {
+    "qs": "^6.5.1"
+  }
+}
