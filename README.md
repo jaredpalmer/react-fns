@@ -1,4 +1,4 @@
-# react-fns
+ react-fns
 
 Modern React components, hoc's, and utilities functions. 
 
@@ -9,37 +9,21 @@ Modern React components, hoc's, and utilities functions.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents** 
 
-- [API Reference](#api-reference)
-  - [Higher Order Components / Render Props](#higher-order-components--render-props)
-    - [DeviceMotion](#devicemotion)
-      - [DeviceMotion props](#devicemotion-props)
-      - [`<DeviceMotion render/>`](#devicemotion-render)
-      - [`withDeviceMotion()`](#withdevicemotion)
-    - [DeviceOrientation](#deviceorientation)
-      - [DeviceOrientation props](#deviceorientation-props)
-      - [`<DeviceOrientation render/>`](#deviceorientation-render)
-      - [`withDeviceOrientation()`](#withdeviceorientation)
-    - [Network](#network)
-      - [Network props](#network-props)
-      - [`<Network render/>`](#network-render)
-      - [`withNetwork()`](#withnetwork)
-    - [Scroll](#scroll)
-      - [Scroll props](#scroll-props)
-      - [`<Scroll render/>`](#scroll-render)
-      - [`withScroll()`](#withscroll)
-  - [Utility Components](#utility-components)
-    - [`<Mailto />`](#mailto-)
-      - [Mailto props](#mailto-props)
-    - [`<Sms />`](#sms-)
-      - [Sms props](#sms-props)
-- [Todo](#todo)
-- [Author](#author)
+- [Higher Order Components / Render Props](#higher-order-components--render-props)
+  - [DeviceMotion](#devicemotion)    
+  - [DeviceOrientation](#deviceorientation)
+  - [Network](#network)
+  - [Scroll](#scroll)
+- [Utility Components](#utility-components)
+  - [`<Mailto />`](#mailto-)  
+  - [`<Sms />`](#sms-)
+  
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## API Reference
+# API Reference
 
-### Higher Order Components / Render Props
+## Higher Order Components / Render Props
 
 When possible, each component (e.g. `<Thing/>`) in react-fns also exports a higher-order component with identical functionality (e.g. `withThing()`.
 
@@ -52,11 +36,11 @@ Every render prop'd component shares the same three rendering methods:
 All HoC's pass will through any and all additional props through to the inner component in addition to the props that they inject.
 
 
-#### DeviceMotion
+### DeviceMotion
 
 Detect and retrieve current device Motion.
 
-##### DeviceMotion props
+#### DeviceMotion props
 
  - `acceleration: DeviceMotionEvent.acceleration`
  - `accelerationIncludingGravity: DeviceMotionEvent.accelerationIncludingGravity`
@@ -65,7 +49,7 @@ Detect and retrieve current device Motion.
 
 For more information about the DeviceMotion API, [check out the MDN reference](https://developer.mozilla.org/en-US/docs/Web/Events/devicemotion)
 
-##### `<DeviceMotion render/>`
+#### `<DeviceMotion render/>`
 
 ```js
 import { DeviceMotion } from 'react-fns'
@@ -82,7 +66,7 @@ const Example = () =>
 export default Example
 ```
 
-##### `withDeviceMotion()`
+#### `withDeviceMotion()`
 
 ```js
 import { withDeviceMotion } from 'react-fns'
@@ -95,11 +79,11 @@ const Inner = ({ alpha, beta, gamma, absolute }) =>
 export default withDeviceMotion(Inner)
 ```
 
-#### DeviceOrientation
+### DeviceOrientation
 
 Detect and retrieve current device orientation.
 
-##### DeviceOrientation props
+#### DeviceOrientation props
 
 - `alpha: number`:  value represents the motion of the device around the z axis, represented in degrees with values ranging from 0 to 360.
 - `betaa: number`: value represents the motion of the device around the x axis, represented in degrees with values ranging from -180 to 180. This represents a front to back motion of the device.
@@ -107,7 +91,7 @@ Detect and retrieve current device orientation.
 
 For more information about the DeviceOrientation API, [check out the MDN reference](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation)
 
-##### `<DeviceOrientation render/>`
+#### `<DeviceOrientation render/>`
 
 ```js
 import { DeviceOrientation } from 'react-fns'
@@ -124,7 +108,7 @@ const Example = () =>
 export default Example
 ```
 
-##### `withDeviceOrientation()`
+#### `withDeviceOrientation()`
 
 ```js
 import { withDeviceOrientation } from 'react-fns'
@@ -137,16 +121,16 @@ const Inner = ({ alpha, beta, gamma, absolute }) =>
 export default withDeviceOrientation(Inner)
 ```
 
-#### Network
+### Network
 
 Retrieve network access from the browser.
 
-##### Network props
+#### Network props
 
 - `online: boolean`: `true` if the browser has network access. `false` otherwise.
 - `offlineAt?: Date`: Date when network connection was lost.
 
-##### `<Network render/>`
+#### `<Network render/>`
 
 ```js
 import { Network } from 'react-fns'
@@ -164,7 +148,7 @@ const Example = () =>
 export default Example
 ```
 
-##### `withNetwork()`
+#### `withNetwork()`
 
 ```js
 import { withNetwork } from 'react-fns'
@@ -178,14 +162,14 @@ const Inner = ({ online, offlineAt }) =>
 export default withNetwork(Inner)
 ```
 
-#### Scroll
+### Scroll
 
-##### Scroll props
+#### Scroll props
 
 - `x`: Horizontal scroll in pixels (`window.scrollX`)
 - `y`: Vertical scroll in pixels (`window.scrollX`)
 
-##### `<Scroll render/>`
+#### `<Scroll render/>`
 
 Returns `window.scrollY` and `window.scrollX`.
 
@@ -202,7 +186,7 @@ const Example = () =>
 export default Example
 ```
 
-##### `withScroll()`
+#### `withScroll()`
 
 Injects `window.scrollY` and `window.scrollX` as `x` and `y` props.
 
@@ -214,13 +198,13 @@ const Inner = ({ x, y }) => <div>Scroll Position: {x}, {y}</div>
 export default withScroll(Inner)
 ```
 
-### Utility Components
+## Utility Components
 
-#### `<Mailto />`
+### `<Mailto />`
 
 Renders `<a href="mailto:..." />`
 
-##### Mailto props
+#### Mailto props
 
 - `email: string`: Recipient's email address
 - `subject?: string`: Subject of the email
@@ -228,16 +212,16 @@ Renders `<a href="mailto:..." />`
 - `bcc?: string | string[]`: Email address or an array of email addresses to Bcc (blind copy)
 - `body?: string`: Body copy of the email
 
-#### `<Sms />`
+### `<Sms />`
 
 Renders `<a href="sms:..." />`
 
-##### Sms props
+#### Sms props
 
 - `phone: string`: Phone number
 - `body?: string`: Body copy of the text message
 
-## Todo
+# Todo
 
 - [ ] `<Viewport />`
 - [ ] `<Geo/>`
@@ -247,6 +231,6 @@ Renders `<a href="sms:..." />`
 - Add warnings
 - Consider a factory for Web API's
 
-## Author
+# Author
 
 - Jared Palmer [@jaredpalmer](https://twitter.com/jaredpalmer)
