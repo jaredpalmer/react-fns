@@ -1,4 +1,4 @@
- react-fns
+# react-fns
 
 Modern React components, hoc's, and utilities functions. 
 
