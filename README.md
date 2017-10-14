@@ -18,11 +18,15 @@ Modern React components, hoc's, and utilities functions.
   - Viewport
   - InfiniteScroll
   - MousePosition
-  - HoverArea
+  - Hover
   - Draggable
   - Droppable
-  - Orderable
-  - Parallax
+  - Sortable
+  - Scrollable
+  - Swipeable
+  - Request/Fetch
+  - Upload
+  - Alert, Confirm, Prompt
 - [Utility Components](#utility-components)
   - [`<Mailto />`](#mailto-)  
   - [`<Sms />`](#sms-)
