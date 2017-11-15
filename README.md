@@ -9,28 +9,40 @@ Modern React components, hoc's, and utilities functions.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents** 
 
-- [Higher Order Components / Render Props](#higher-order-components--render-props)
-  - [DeviceMotion](#devicemotion)    
-  - [DeviceOrientation](#deviceorientation)
-  - [Network](#network)
-  - [Scroll](#scroll)
-  - Geo
-  - Viewport
-  - InfiniteScroll
-  - MousePosition
-  - Hover
-  - Draggable
-  - Droppable
-  - Sortable
-  - Scrollable
-  - Swipeable
-  - Request/Fetch
-  - Upload
-  - Alert, Confirm, Prompt
-- [Utility Components](#utility-components)
-  - [`<Mailto />`](#mailto-)  
-  - [`<Sms />`](#sms-)
-  
+- [API Reference](#api-reference)
+  - [Higher Order Components / Render Props](#higher-order-components--render-props)
+    - [DeviceMotion](#devicemotion)
+      - [DeviceMotion props](#devicemotion-props)
+      - [`<DeviceMotion render/>`](#devicemotion-render)
+      - [`withDeviceMotion()`](#withdevicemotion)
+    - [DeviceOrientation](#deviceorientation)
+      - [DeviceOrientation props](#deviceorientation-props)
+      - [`<DeviceOrientation render/>`](#deviceorientation-render)
+      - [`withDeviceOrientation()`](#withdeviceorientation)
+    - [Network](#network)
+      - [Network props](#network-props)
+      - [`<Network render/>`](#network-render)
+      - [`withNetwork()`](#withnetwork)
+    - [GeoPosition](#geoposition)
+      - [GeoPosition props](#geoposition-props)
+      - [`<GeoPosition render/>`](#geoposition-render)
+      - [`withGeoPosition()`](#withgeoposition)
+    - [Media](#media)
+      - [Media props](#media-props)
+      - [Media render props](#media-render-props)
+      - [`<Media render/>`](#media-render)
+      - [`withMedia()`](#withmedia)
+    - [Scroll](#scroll)
+      - [Scroll props](#scroll-props)
+      - [`<Scroll render/>`](#scroll-render)
+      - [`withScroll()`](#withscroll)
+  - [Utility Components](#utility-components)
+    - [`<Mailto />`](#mailto-)
+      - [Mailto props](#mailto-props)
+    - [`<Sms />`](#sms-)
+      - [Sms props](#sms-props)
+- [Todo](#todo)
+- [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -174,6 +186,80 @@ const Inner = ({ online, offlineAt }) =>
 
 export default withNetwork(Inner)
 ```
+
+### GeoPosition
+
+Retrieve Geo position from the browser.
+
+#### GeoPosition props
+
+- `isLoading: boolean`: `true` request status
+- `coords?: Position`: Geoposition object. Has keys of `latitude` and `longitude`
+- `error?: PositionError`: GeoPosition error. See MDN for shape. 
+
+#### `<GeoPosition render/>`
+
+```js
+import { GeoPosition } from 'react-fns'
+
+const Example = () =>
+  <GeoPosition 
+    render={({ isLoading, coords, error }) => 
+     <div>
+        {coords &&  `${cords.longitude}$,{coords.latitude}`}
+     </div>
+    } 
+  />
+
+export default Example
+```
+
+#### `withGeoPosition()`
+
+```js
+import { withGeoPosition } from 'react-fns'
+
+const Inner = ({ isLoading, coords, error }) => 
+  <div>
+   {coords &&  `${cords.longitude}$,{coords.latitude}`}
+  </div>
+
+export default withGeoPosition(Inner)
+```
+
+### Media
+
+Retrieve  from the browser.
+
+#### Media props
+
+- `query: string`: A media query
+
+#### Media render props
+
+- `matches: boolean`: `true` if browser matches the media query
+
+#### `<Media render/>`
+
+```js
+import { Media } from 'react-fns'
+
+const Example = () =>
+  <Media 
+    query="(min-width: 1000px)"
+    render={(match) => 
+     <div>
+        {match ? 'mobile' : 'desktop'}
+     </div>
+    } 
+  />
+
+export default Example
+```
+
+#### `withMedia()`
+
+Not implemented
 
 ### Scroll
 
