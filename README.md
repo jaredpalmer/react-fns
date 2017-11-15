@@ -40,7 +40,7 @@ Modern React components, hoc's, and utilities functions.
     - [`<Mailto />`](#mailto-)
       - [Mailto props](#mailto-props)
     - [`<Sms />`](#sms-)
-      - [Sms props](#sms-props)
+      - [Sms props](#sms-props)np
 - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
