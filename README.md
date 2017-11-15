@@ -234,16 +234,6 @@ Renders `<a href="sms:..." />`
 - `phone: string`: Phone number
 - `body?: string`: Body copy of the text message
 
-# Todo
-
-- [ ] `<Viewport />`
-- [ ] `<Geo/>`
-- [ ] `<Request />`
-- [ ] `<Toggle />`
-- [ ] `<Truncate />`
-- Add warnings
-- Consider a factory for Web API's
-
 # Author
 
 - Jared Palmer [@jaredpalmer](https://twitter.com/jaredpalmer)
