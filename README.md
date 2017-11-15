@@ -4,7 +4,6 @@ Modern React components, hoc's, and utilities functions.
 
 *react-fns* is your React utility belt. It's a collection of declarative components and higher-order components for lots of common situations.
 
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents** 
@@ -44,6 +43,8 @@ Modern React components, hoc's, and utilities functions.
 - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+There's more to do. The goal is to standardize almost everything on MDN.
 
 # API Reference
 
