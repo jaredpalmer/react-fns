@@ -1,6 +1,6 @@
 # react-fns
 
-Browser APIs as declarative React components and HoC's
+Browser API's as declarative React components and HoC's
 
 *react-fns* is your React utility belt. It's a collection of imperative Browser API's turned into declarative components and higher-order components for lots of common situations.
 
