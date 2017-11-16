@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as qs from 'qs';
+import * as React from "react";
+import * as qs from "qs";
 
 export interface SmsProps extends React.HTMLAttributes<HTMLAnchorElement> {
   /** Phone number */
@@ -12,12 +12,12 @@ export const Sms: React.SFC<SmsProps> = ({
   phone,
   body,
   children,
-  ...props,
+  ...props
 }) => {
   return (
     <a
       href={`sms:${phone}?${qs.stringify({
-        body,
+        body
       })}`}
       {...props}
     >
@@ -26,4 +26,4 @@ export const Sms: React.SFC<SmsProps> = ({
   );
 };
 
-Sms.displayName = 'Sms';
+Sms.displayName = "Sms";

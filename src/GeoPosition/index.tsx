@@ -1,2 +1,2 @@
-export * from './GeoPosition';
-export * from './withGeoPosition';
+export * from "./GeoPosition";
+export * from "./withGeoPosition";

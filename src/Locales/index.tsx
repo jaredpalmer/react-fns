@@ -1,2 +1,2 @@
-export * from './Locales';
-export * from './withLocales';
+export * from "./Locales";
+export * from "./withLocales";

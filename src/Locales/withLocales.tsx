@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Locales, LocalesProps } from './Locales';
-import { hoistNonReactStatics } from '../hoistStatics';
+import * as React from "react";
+import { Locales, LocalesProps } from "./Locales";
+import { hoistNonReactStatics } from "../hoistStatics";
 
 export function withLocales<Props>(Component: React.ComponentType<Props>) {
   const S: React.SFC<Props> = props => {

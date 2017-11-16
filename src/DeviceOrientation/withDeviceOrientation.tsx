@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { DeviceOrientation, DeviceOrientationProps } from './DeviceOrientation';
-import { hoistNonReactStatics } from '../hoistStatics';
+import * as React from "react";
+import { DeviceOrientation, DeviceOrientationProps } from "./DeviceOrientation";
+import { hoistNonReactStatics } from "../hoistStatics";
 
 export function withDeviceOrientation<Props>(
   Component: React.ComponentType<Props>

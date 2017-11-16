@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { DeviceMotion, DeviceMotionProps } from './DeviceMotion';
-import { hoistNonReactStatics } from '../hoistStatics';
+import * as React from "react";
+import { DeviceMotion, DeviceMotionProps } from "./DeviceMotion";
+import { hoistNonReactStatics } from "../hoistStatics";
 
 export function withDeviceMotion<Props>(Component: React.ComponentType<Props>) {
   const S: React.SFC<Props> = props => {

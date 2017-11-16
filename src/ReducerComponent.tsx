@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export class ReducerComponent<P, S, A> extends React.Component<P, S> {
   constructor(props: P) {
@@ -6,7 +6,7 @@ export class ReducerComponent<P, S, A> extends React.Component<P, S> {
   }
 
   reducer = (state: S, action: A) => {
-    console.log('No reducer implemented!');
+    console.log("No reducer implemented!");
     console.log(action);
     return state;
   };

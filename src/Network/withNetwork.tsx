@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Network, NetworkProps } from './Network';
-import { hoistNonReactStatics } from '../hoistStatics';
+import * as React from "react";
+import { Network, NetworkProps } from "./Network";
+import { hoistNonReactStatics } from "../hoistStatics";
 
 export function withNetwork<Props>(Component: React.ComponentType<Props>) {
   const S: React.SFC<Props> = props => {

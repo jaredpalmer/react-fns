@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as qs from 'qs';
+import * as React from "react";
+import * as qs from "qs";
 
 export interface MailtoProps extends React.HTMLAttributes<HTMLAnchorElement> {
   /** Email address */
@@ -21,15 +21,15 @@ export const Mailto: React.SFC<MailtoProps> = ({
   bcc,
   body,
   children,
-  ...props,
+  ...props
 }) => {
   return (
     <a
       href={`mailto:${email}?${qs.stringify({
         subject,
-        cc: cc.join(', '),
-        bcc: bcc.join(', '),
-        body,
+        cc: cc.join(", "),
+        bcc: bcc.join(", "),
+        body
       })}`}
       {...props}
     >
@@ -38,4 +38,4 @@ export const Mailto: React.SFC<MailtoProps> = ({
   );
 };
 
-Mailto.displayName = 'Mailto';
+Mailto.displayName = "Mailto";

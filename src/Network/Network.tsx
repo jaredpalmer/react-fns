@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { SharedRenderProps } from '../types';
-import { isEmptyChildren } from '../utils';
+import * as React from "react";
+import { SharedRenderProps } from "../types";
+import { isEmptyChildren } from "../utils";
 
 export interface NetworkProps {
   online: boolean;
@@ -22,13 +22,13 @@ export class Network extends React.Component<
   };
 
   componentDidMount() {
-    window.addEventListener('online', this.handleOnline);
-    window.removeEventListener('offline', this.handleOffline);
+    window.addEventListener("online", this.handleOnline);
+    window.removeEventListener("offline", this.handleOffline);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('online', this.handleOnline);
-    window.removeEventListener('offline', this.handleOffline);
+    window.removeEventListener("online", this.handleOnline);
+    window.removeEventListener("offline", this.handleOffline);
   }
 
   render() {
@@ -38,7 +38,7 @@ export class Network extends React.Component<
       : render
         ? (render as any)(props)
         : children // children come last, always called
-          ? typeof children === 'function'
+          ? typeof children === "function"
             ? children(this.state)
             : !isEmptyChildren(children) ? React.Children.only(children) : null
           : null;

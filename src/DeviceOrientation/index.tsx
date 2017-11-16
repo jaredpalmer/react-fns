@@ -1,2 +1,2 @@
-export * from './DeviceOrientation';
-export * from './withDeviceOrientation';
+export * from "./DeviceOrientation";
+export * from "./withDeviceOrientation";

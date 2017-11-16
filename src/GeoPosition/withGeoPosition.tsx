@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { GeoPosition, GeoPositionProps } from './GeoPosition';
-import { hoistNonReactStatics } from '../hoistStatics';
+import * as React from "react";
+import { GeoPosition, GeoPositionProps } from "./GeoPosition";
+import { hoistNonReactStatics } from "../hoistStatics";
 
 export function withGeoPosition<Props>(Component: React.ComponentType<Props>) {
   const S: React.SFC<Props> = props => {

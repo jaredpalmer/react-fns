@@ -1,2 +1,2 @@
-export * from './Network';
-export * from './withNetwork';
+export * from "./Network";
+export * from "./withNetwork";

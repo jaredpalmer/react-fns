@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { SharedRenderProps } from '../types';
-import { isEmptyChildren } from '../utils';
+import * as React from "react";
+import { SharedRenderProps } from "../types";
+import { isEmptyChildren } from "../utils";
 
 export interface ScrollProps {
   x: number;
@@ -19,11 +19,11 @@ export class Scroll extends React.Component<
 
   componentDidMount() {
     this.handleWindowScroll();
-    window.addEventListener('scroll', this.handleWindowScroll);
+    window.addEventListener("scroll", this.handleWindowScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleWindowScroll);
+    window.removeEventListener("scroll", this.handleWindowScroll);
   }
 
   render() {
@@ -33,7 +33,7 @@ export class Scroll extends React.Component<
       : render
         ? (render as any)(props)
         : children // children come last, always called
-          ? typeof children === 'function'
+          ? typeof children === "function"
             ? children(this.state)
             : !isEmptyChildren(children) ? React.Children.only(children) : null
           : null;

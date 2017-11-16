@@ -1,2 +1,2 @@
-export * from './DeviceMotion';
-export * from './withDeviceMotion';
+export * from "./DeviceMotion";
+export * from "./withDeviceMotion";

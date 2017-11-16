@@ -7,18 +7,17 @@
   "scripts": {
     "test": "jest --env=jsdom",
     "test:watch": "npm run test -- --watch",
-    "start": "cross-env NODE_ENV=development tsc-watch --onSuccess \"rollup -c\"",
+    "start":
+      "cross-env NODE_ENV=development tsc-watch --onSuccess \"rollup -c\"",
     "prebuild": "rimraf dist",
-    "build": "tsc && cross-env NODE_ENV=production rollup -c && cross-env NODE_ENV=development rollup -c && rimraf compiled",
+    "build":
+      "tsc && cross-env NODE_ENV=production rollup -c && cross-env NODE_ENV=development rollup -c && rimraf compiled",
     "prepublish": "npm run build",
     "format": "prettier --write 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "prettier --write",
-      "git add"
-    ]
+    "**/*.{ts,tsx}": ["prettier --write", "git add"]
   },
   "prettier": {
     "trailingComma": "es5",
@@ -28,12 +27,7 @@
     "type": "git",
     "url": "git+https://github.com/jaredpalmer/react-fns.git"
   },
-  "keywords": [
-    "react",
-    "react-fns",
-    "render-props",
-    "hoc"
-  ],
+  "keywords": ["react", "react-fns", "render-props", "hoc"],
   "author": "Jared Palmer <jared@palmer.net>",
   "license": "MIT",
   "bugs": {
@@ -71,9 +65,7 @@
     "typescript": "^2.4.2"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
@@ -81,15 +73,8 @@
       "<rootDir>/test/**/*.ts?(x)",
       "<rootDir>/test/**/?(*.)(spec|test).ts?(x)"
     ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ]
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "json"]
   },
   "dependencies": {
     "qs": "^6.5.1",
