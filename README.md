@@ -1,8 +1,18 @@
 # react-fns
 
-Browser API's as declarative React components and HoC's
-
 *react-fns* is your React utility belt. It's a collection of imperative Browser API's turned into declarative components and higher-order components for lots of common situations.
+
+## Higher Order Components / Render Props
+
+When possible, each component (e.g. `<Thing/>`) in react-fns also exports a higher-order component with identical functionality (e.g. `withThing()`.
+
+Every render prop'd component shares the same three rendering methods:
+
+- `<Thing render={props => <Inner />}>`
+- `<Thing component={Inner}>`
+- `<Thing>{props => <Inner />}</Thing>>`
+
+All HoC's will pass through any and all additional props through to the inner component in addition to the props that they inject.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -51,19 +61,6 @@ Browser API's as declarative React components and HoC's
 There's more to do. The goal is to standardize almost everything on MDN.
 
 # API Reference
-
-## Higher Order Components / Render Props
-
-When possible, each component (e.g. `<Thing/>`) in react-fns also exports a higher-order component with identical functionality (e.g. `withThing()`.
-
-Every render prop'd component shares the same three rendering methods:
-
-- `<Thing render={props => <Inner />}>`
-- `<Thing component={Inner}>`
-- `<Thing>{props => <Inner />}</Thing>>`
-
-All HoC's will pass through any and all additional props through to the inner component in addition to the props that they inject.
-
 
 ### DeviceMotion
 
