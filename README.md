@@ -1,6 +1,6 @@
 # react-fns
 
-Modern React components, hoc's, and utilities functions. 
+Modern React components, render-props, hoc's, and utility functions. 
 
 *react-fns* is your React utility belt. It's a collection of declarative components and higher-order components for lots of common situations.
 
