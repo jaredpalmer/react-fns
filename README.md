@@ -58,7 +58,7 @@ Every render prop'd component shares the same three rendering methods:
 - `<Thing component={Inner}>`
 - `<Thing>{props => <Inner />}</Thing>>`
 
-All HoC's pass will through any and all additional props through to the inner component in addition to the props that they inject.
+All HoC's will pass through any and all additional props through to the inner component in addition to the props that they inject.
 
 
 ### DeviceMotion
