@@ -43,7 +43,7 @@ Browser API's as declarative React components and HoC's
     - [`<Mailto />`](#mailto-)
       - [Mailto props](#mailto-props)
     - [`<Sms />`](#sms-)
-      - [Sms props](#sms-props)np
+      - [Sms props](#sms-props)
 - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
