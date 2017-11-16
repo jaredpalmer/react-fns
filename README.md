@@ -355,6 +355,33 @@ Renders `<a href="sms:..." />`
 - `phone: string`: Phone number
 - `body?: string`: Body copy of the text message
 
-# Author
+## ToDo
+
+
+### Useful components
+
+- Fetch
+- Draggable
+- Droppable
+- Orderable
+- InfiniteList
+- Parallax
+- Pin (to Top / to Bottom)
+
+### Browser API's
+
+See https://developer.mozilla.org/en-US/docs/WebAPI for the full list
+- MousePosition
+- Viewport
+  - [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
+  - Other implementations
+- Audio
+ - [MidiAccess](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess)
+- Battery Status
+- Vibration
+- Camera
+- Measure
+
+## Author
 
 - Jared Palmer [@jaredpalmer](https://twitter.com/jaredpalmer)
