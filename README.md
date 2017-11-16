@@ -2,7 +2,7 @@
 
 # react-fns
 
-*react-fns* is your React utility belt. It's a collection of imperative Browser API's turned into declarative [React] (https://github.com/facebook/react) components and higher-order components for lots of common situations.
+*react-fns* is your React utility belt. It's a collection of imperative Browser API's turned into declarative [React](https://github.com/facebook/react) components and higher-order components for lots of common situations.
 
 _There's a lot more to do. The goal is to standardize almost every Web API on [MDN](https://developer.mozilla.org/en-US/docs/WebAPI)._
 
