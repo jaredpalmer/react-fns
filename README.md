@@ -14,7 +14,7 @@ Every render prop'd component shares the same three rendering methods:
 
 All HoC's will pass through any and all additional props through to the inner component in addition to the props that they inject.
 
-_There a lot more to do. The goal is to standardize almost everything on MDN._
+_There's a lot more to do. The goal is to standardize almost everything on MDN._
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
