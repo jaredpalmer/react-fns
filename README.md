@@ -2,19 +2,7 @@
 
 *react-fns* is your React utility belt. It's a collection of imperative Browser API's turned into declarative components and higher-order components for lots of common situations.
 
-## Higher Order Components / Render Props
-
-When possible, each component (e.g. `<Thing/>`) in react-fns also exports a higher-order component with identical functionality (e.g. `withThing()`.
-
-Every render prop'd component shares the same three rendering methods:
-
-- `<Thing render={props => <Inner />}>`
-- `<Thing component={Inner}>`
-- `<Thing>{props => <Inner />}</Thing>>`
-
-All HoC's will pass through any and all additional props through to the inner component in addition to the props that they inject.
-
-_There's a lot more to do. The goal is to standardize almost everything on MDN._
+_There's a lot more to do. The goal is to standardize almost every Web API on [MDN](https://developer.mozilla.org/en-US/docs/WebAPI)._
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -63,6 +51,18 @@ _There's a lot more to do. The goal is to standardize almost everything on MDN._
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # API Reference
+
+## Higher Order Components / Render Props
+
+When possible, each component (e.g. `<Thing/>`) in react-fns also exports a higher-order component with identical functionality (e.g. `withThing()`.
+
+Every render prop'd component shares the same three rendering methods:
+
+- `<Thing render={props => <Inner />}>`
+- `<Thing component={Inner}>`
+- `<Thing>{props => <Inner />}</Thing>>`
+
+All HoC's will pass through any and all additional props through to the inner component in addition to the props that they inject.
 
 ## DeviceMotion
 
