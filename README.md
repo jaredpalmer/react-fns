@@ -55,7 +55,10 @@ _There's a lot more to do. The goal is to standardize almost everything on MDN._
     - [Mailto props](#mailto-props)
   - [`<Sms />`](#sms-)
     - [Sms props](#sms-props)
-- [Author](#author)
+  - [Roadmap](#roadmap)
+    - [Useful components](#useful-components)
+    - [Browser API's](#browser-apis)
+  - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -355,7 +358,7 @@ Renders `<a href="sms:..." />`
 - `phone: string`: Phone number
 - `body?: string`: Body copy of the text message
 
-## ToDo
+## Roadmap
 
 
 ### Useful components
