@@ -111,7 +111,7 @@ Detect and retrieve current device orientation.
 #### DeviceOrientation props
 
 - `alpha: number`:  value represents the motion of the device around the z axis, represented in degrees with values ranging from 0 to 360.
-- `betaa: number`: value represents the motion of the device around the x axis, represented in degrees with values ranging from -180 to 180. This represents a front to back motion of the device.
+- `beta: number`: value represents the motion of the device around the x axis, represented in degrees with values ranging from -180 to 180. This represents a front to back motion of the device.
 - `gamma: number`:  value represents the motion of the device around the y axis, represented in degrees with values ranging from -90 to 90. This represents a left to right motion of the device.
 
 For more information about the DeviceOrientation API, [check out the MDN reference](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation)
