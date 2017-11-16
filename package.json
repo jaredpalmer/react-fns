@@ -1,7 +1,7 @@
 {
   "name": "react-fns",
   "version": "1.0.1",
-  "description": "Modern React components, hoc's, and utilities functions. ",
+  "description": "Modern React components, hoc's, and utilities functions.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -11,7 +11,18 @@
     "prebuild": "rimraf dist",
     "build": "tsc && cross-env NODE_ENV=production rollup -c && cross-env NODE_ENV=development rollup -c && rimraf compiled",
     "prepublish": "npm run build",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'test/**/*'"
+    "format": "prettier --write 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true
   },
   "repository": {
     "type": "git",
@@ -38,7 +49,9 @@
     "@types/react-dom": "15.5.1",
     "@types/react-test-renderer": "15.5.2",
     "cross-env": "5.0.5",
+    "husky": "^0.14.3",
     "jest": "^20.0.4",
+    "lint-staged": "^5.0.0",
     "prettier": "^1.8.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
