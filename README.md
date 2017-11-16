@@ -43,7 +43,7 @@ Browser API's as declarative React components and HoC's
     - [`<Mailto />`](#mailto-)
       - [Mailto props](#mailto-props)
     - [`<Sms />`](#sms-)
-      - [Sms props](#sms-props)np
+      - [Sms props](#sms-props)
 - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -305,11 +305,11 @@ export default withScroll(Inner)
 
 #### Locales props
 
-- `locales`: The current browser locales (`navigator.langauges` or `navigator.langauge`)
+- `locales`: The current browser locales (`navigator.languages` or `navigator.language`)
 
 #### `<Locales render/>`
 
-Returns canonical `navigator.langauges` or `navigator.langauge` as `locales`.
+Returns canonical `navigator.languages` or `navigator.language` as `locales`.
 
 ```js
 import { Locales } from 'react-fns'
@@ -326,7 +326,7 @@ export default Example
 
 #### `withLocales()`
 
-Injects canonical `navigator.langauges` or `navigator.langauge` as `locales` prop.
+Injects canonical `navigator.languages` or `navigator.language` as `locales` prop.
 
 ```js
 import { withLocales } from 'react-fns'
