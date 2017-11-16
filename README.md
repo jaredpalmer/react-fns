@@ -212,7 +212,7 @@ const Example = () =>
   <GeoPosition
     render={({ isLoading, coords, error }) =>
      <div>
-        {coords &&  `${cords.longitude}$,{coords.latitude}`}
+        {coords &&  `${cords.longitude},${coords.latitude}`}
      </div>
     }
   />
