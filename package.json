@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Modern React components, hoc's, and utilities functions. ",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --env=jsdom",
     "test:watch": "npm run test -- --watch",
