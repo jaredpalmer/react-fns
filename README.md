@@ -35,10 +35,10 @@ Modern React components, render-props, hoc's, and utility functions.
       - [Scroll props](#scroll-props)
       - [`<Scroll render/>`](#scroll-render)
       - [`withScroll()`](#withscroll)
-    - [Locale](#locale)
-      - [Locale props](#locale-props)
-      - [`<Locale render/>`](#locale-render)
-      - [`withLocale()`](#withlocale)
+    - [Locales](#locale)
+      - [Locales props](#locale-props)
+      - [`<Locales render/>`](#locale-render)
+      - [`withLocales()`](#withlocale)
   - [Utility Components](#utility-components)
     - [`<Mailto />`](#mailto-)
       - [Mailto props](#mailto-props)
@@ -301,21 +301,21 @@ const Inner = ({ x, y }) => <div>Scroll Position: {x}, {y}</div>
 export default withScroll(Inner)
 ```
 
-### Locale
+### Locales
 
-#### Locale props
+#### Locales props
 
 - `locales`: The current browser locales (`navigator.langauges` or `navigator.langauge`)
 
-#### `<Locale render/>`
+#### `<Locales render/>`
 
 Returns canonical `navigator.langauges` or `navigator.langauge` as `locales`.
 
 ```js
-import { Locale } from 'react-fns'
+import { Locales } from 'react-fns'
 
 const Example = () =>
-  <Locale
+  <Locales
     render={({ locales }) =>
      <span>Right now the time and date is {new Intl.DateTimeFormat(locales).format(new Date())}</span>
     }
@@ -324,16 +324,16 @@ const Example = () =>
 export default Example
 ```
 
-#### `withLocale()`
+#### `withLocales()`
 
 Injects canonical `navigator.langauges` or `navigator.langauge` as `locales` prop.
 
 ```js
-import { withLocale } from 'react-fns'
+import { withLocales } from 'react-fns'
 
 const Inner = ({ locales }) => <span>Right now the time and date is {new Intl.DateTimeFormat(locales).format(new
 
-export default withLocale(Inner)
+export default withLocales(Inner)
 ```
 
 ## Utility Components

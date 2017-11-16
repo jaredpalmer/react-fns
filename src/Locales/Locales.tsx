@@ -2,7 +2,7 @@ import * as React from "react";
 import { SharedRenderProps } from "../types";
 import { isEmptyChildren } from "../utils";
 
-export interface LocaleProps {
+export interface LocalesProps {
   locale: string;
 }
 
@@ -13,13 +13,13 @@ declare namespace Intl {
   function getCanonicalLocales(localse: string[]): string[];
 }
 
-export class Locale extends React.Component<
+export class Locales extends React.Component<
   SharedRenderProps<{}>,
-  LocaleProps
+  LocalesProps
 > {
-  state: LocaleProps = { locale: this.preferredLocale() };
+  state: LocalesProps = { locale: this.preferredLocales() };
 
-  preferredLocale(): string {
+  preferredLocales(): string {
     if (navigator.languages && navigator.languages.length > 0) {
       return Intl.getCanonicalLocales(navigator.languages)[0];
     }
@@ -28,7 +28,7 @@ export class Locale extends React.Component<
 
   handleLanguageChange = () => {
     this.setState({
-      locale: this.preferredLocale()
+      locale: this.preferredLocales()
     });
   };
 
