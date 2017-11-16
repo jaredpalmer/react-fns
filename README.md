@@ -1,12 +1,12 @@
 # react-fns
 
-Modern React components, render-props, hoc's, and utility functions. 
+Modern React components, render-props, hoc's, and utility functions.
 
 *react-fns* is your React utility belt. It's a collection of declarative components and higher-order components for lots of common situations.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents** 
+**Table of Contents**
 
 - [API Reference](#api-reference)
   - [Higher Order Components / Render Props](#higher-order-components--render-props)
@@ -35,6 +35,10 @@ Modern React components, render-props, hoc's, and utility functions.
       - [Scroll props](#scroll-props)
       - [`<Scroll render/>`](#scroll-render)
       - [`withScroll()`](#withscroll)
+    - [Locale](#locale)
+      - [Locale props](#locale-props)
+      - [`<Locale render/>`](#locale-render)
+      - [`withLocale()`](#withlocale)
   - [Utility Components](#utility-components)
     - [`<Mailto />`](#mailto-)
       - [Mailto props](#mailto-props)
@@ -80,12 +84,12 @@ For more information about the DeviceMotion API, [check out the MDN reference](h
 import { DeviceMotion } from 'react-fns'
 
 const Example = () =>
-  <DeviceMotion 
-    render={({ alpha, beta, gamma, absolute }) => 
+  <DeviceMotion
+    render={({ alpha, beta, gamma, absolute }) =>
      <pre>
       {JSON.stringify({alpha, beta, gamma}, null, 2)}
      </pre>
-    } 
+    }
   />
 
 export default Example
@@ -96,7 +100,7 @@ export default Example
 ```js
 import { withDeviceMotion } from 'react-fns'
 
-const Inner = ({ alpha, beta, gamma, absolute }) => 
+const Inner = ({ alpha, beta, gamma, absolute }) =>
   <pre>
     {JSON.stringify({alpha, beta, gamma}, null, 2)}
   </pre>
@@ -122,12 +126,12 @@ For more information about the DeviceOrientation API, [check out the MDN referen
 import { DeviceOrientation } from 'react-fns'
 
 const Example = () =>
-  <DeviceOrientation 
-    render={({ alpha, beta, gamma, absolute }) => 
+  <DeviceOrientation
+    render={({ alpha, beta, gamma, absolute }) =>
      <pre>
       {JSON.stringify({alpha, beta, gamma}, null, 2)}
      </pre>
-    } 
+    }
   />
 
 export default Example
@@ -138,7 +142,7 @@ export default Example
 ```js
 import { withDeviceOrientation } from 'react-fns'
 
-const Inner = ({ alpha, beta, gamma, absolute }) => 
+const Inner = ({ alpha, beta, gamma, absolute }) =>
   <pre>
     {JSON.stringify({alpha, beta, gamma}, null, 2)}
   </pre>
@@ -161,13 +165,13 @@ Retrieve network access from the browser.
 import { Network } from 'react-fns'
 
 const Example = () =>
-  <Network 
-    render={({ online, offlineAt }) => 
+  <Network
+    render={({ online, offlineAt }) =>
      <div>
         {online ? 'Online!' : 'Offline'}
         {offlineAt && `Last connected ${offlineAt.toISOString()}`}
      </div>
-    } 
+    }
   />
 
 export default Example
@@ -178,7 +182,7 @@ export default Example
 ```js
 import { withNetwork } from 'react-fns'
 
-const Inner = ({ online, offlineAt }) => 
+const Inner = ({ online, offlineAt }) =>
   <div>
     {online ? 'Online!' : 'Offline'}
     {offlineAt && `Last connected ${offlineAt.toISOString()}`}
@@ -195,7 +199,7 @@ Retrieve Geo position from the browser.
 
 - `isLoading: boolean`: `true` request status
 - `coords?: Position`: Geoposition object. Has keys of `latitude` and `longitude`
-- `error?: PositionError`: GeoPosition error. See MDN for shape. 
+- `error?: PositionError`: GeoPosition error. See MDN for shape.
 
 #### `<GeoPosition render/>`
 
@@ -203,12 +207,12 @@ Retrieve Geo position from the browser.
 import { GeoPosition } from 'react-fns'
 
 const Example = () =>
-  <GeoPosition 
-    render={({ isLoading, coords, error }) => 
+  <GeoPosition
+    render={({ isLoading, coords, error }) =>
      <div>
         {coords &&  `${cords.longitude}$,{coords.latitude}`}
      </div>
-    } 
+    }
   />
 
 export default Example
@@ -219,7 +223,7 @@ export default Example
 ```js
 import { withGeoPosition } from 'react-fns'
 
-const Inner = ({ isLoading, coords, error }) => 
+const Inner = ({ isLoading, coords, error }) =>
   <div>
    {coords &&  `${cords.longitude}$,{coords.latitude}`}
   </div>
@@ -245,13 +249,13 @@ Retrieve  from the browser.
 import { Media } from 'react-fns'
 
 const Example = () =>
-  <Media 
+  <Media
     query="(min-width: 1000px)"
-    render={(match) => 
+    render={(match) =>
      <div>
         {match ? 'mobile' : 'desktop'}
      </div>
-    } 
+    }
   />
 
 export default Example
@@ -276,10 +280,10 @@ Returns `window.scrollY` and `window.scrollX`.
 import { Scroll } from 'react-fns'
 
 const Example = () =>
-  <Scroll 
-    render={({ x, y }) => 
+  <Scroll
+    render={({ x, y }) =>
      <div>Scroll: {x}, {y}</div>
-    } 
+    }
   />
 
 export default Example
@@ -295,6 +299,41 @@ import { withScroll } from 'react-fns'
 const Inner = ({ x, y }) => <div>Scroll Position: {x}, {y}</div>
 
 export default withScroll(Inner)
+```
+
+### Locale
+
+#### Locale props
+
+- `locales`: The current browser locales (`navigator.langauges` or `navigator.langauge`)
+
+#### `<Locale render/>`
+
+Returns canonical `navigator.langauges` or `navigator.langauge` as `locales`.
+
+```js
+import { Locale } from 'react-fns'
+
+const Example = () =>
+  <Locale
+    render={({ locales }) =>
+     <span>Right now the time and date is {new Intl.DateTimeFormat(locales).format(new Date())}</span>
+    }
+  />
+
+export default Example
+```
+
+#### `withLocale()`
+
+Injects canonical `navigator.langauges` or `navigator.langauge` as `locales` prop.
+
+```js
+import { withLocale } from 'react-fns'
+
+const Inner = ({ locales }) => <span>Right now the time and date is {new Intl.DateTimeFormat(locales).format(new
+
+export default withLocale(Inner)
 ```
 
 ## Utility Components
