@@ -9,6 +9,7 @@ _There's a lot more to do. The goal is to standardize almost every Web API on [M
 **Table of Contents**
 
 - [API Reference](#api-reference)
+  - [Higher Order Components / Render Props](#higher-order-components--render-props)
   - [DeviceMotion](#devicemotion)
     - [DeviceMotion props](#devicemotion-props)
     - [`<DeviceMotion render/>`](#devicemotion-render)
@@ -39,10 +40,10 @@ _There's a lot more to do. The goal is to standardize almost every Web API on [M
     - [`<Locales render/>`](#locales-render)
     - [`withLocales()`](#withlocales)
   - [Utility Components](#utility-components)
-  - [`<Mailto />`](#mailto-)
-    - [Mailto props](#mailto-props)
-  - [`<Sms />`](#sms-)
-    - [Sms props](#sms-props)
+    - [`<Mailto />`](#mailto-)
+      - [Mailto props](#mailto-props)
+    - [`<Sms />`](#sms-)
+      - [Sms props](#sms-props)
   - [Roadmap](#roadmap)
     - [Useful components](#useful-components)
     - [Browser API's](#browser-apis)
@@ -337,11 +338,11 @@ export default withLocales(Inner)
 
 ## Utility Components
 
-## `<Mailto />`
+### `<Mailto />`
 
 Renders `<a href="mailto:..." />`
 
-### Mailto props
+#### Mailto props
 
 - `email: string`: Recipient's email address
 - `subject?: string`: Subject of the email
@@ -349,11 +350,11 @@ Renders `<a href="mailto:..." />`
 - `bcc?: string | string[]`: Email address or an array of email addresses to Bcc (blind copy)
 - `body?: string`: Body copy of the email
 
-## `<Sms />`
+### `<Sms />`
 
 Renders `<a href="sms:..." />`
 
-### Sms props
+#### Sms props
 
 - `phone: string`: Phone number
 - `body?: string`: Body copy of the text message
