@@ -1,8 +1,8 @@
 ![repo-banner](https://user-images.githubusercontent.com/4060187/32896325-bff4a758-cab0-11e7-8cf5-62759e13fa6b.png)
 
-# react-fns
 
-*react-fns* is your [React](https://github.com/facebook/react) utility belt. It's a collection of imperative Browser API's turned into declarative [React](https://github.com/facebook/react) components and higher-order components for lots of common situations.
+
+**react-fns** is your [React](https://github.com/facebook/react) utility belt. It's a collection of imperative Browser API's turned into declarative [React](https://github.com/facebook/react) components and higher-order components for lots of common situations.
 
 _There's a lot more to do. The goal is to standardize almost every Web API on [MDN](https://developer.mozilla.org/en-US/docs/WebAPI)._
 
