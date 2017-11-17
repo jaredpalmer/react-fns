@@ -235,11 +235,11 @@ export default withGeoPosition(Inner)
 
 ## Media
 
-Retrieve  from the browser.
+Retrieve media query (i.e. `window.matchMedia().matches`) from the browser. Note this component is taken from @mjackson's awesome [react-media](https://github.com/reacttraining/react-media)
 
 ### Media props
 
-- `query: string`: A media query
+- `query: string`: A media query string
 
 ### Media render props
 
