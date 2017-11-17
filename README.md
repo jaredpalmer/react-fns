@@ -171,7 +171,7 @@ import { Fetch } from 'react-fns'
 
 const Example = () =>
   <Fetch
-    url="https://www.reddit.com/r/catgif.json"
+    url="https://www.reddit.com/r/catpics.json"
     transform={r => r.json()}
     render={({ loading, data, error }) =>
       loading
@@ -179,11 +179,13 @@ const Example = () =>
         : (
           error
             ? "Error fetching meows!"
-            : data.data.children.map(({ data: { title, url, permalink } }) =>
-                <a href={permalink} target="_blank">
-                  <img src={url} alt={title} />
-                </a>
-            )
+            : data.data.children.map(({ data: { title, id, url, permalink } }) => 
+                <div key={id} style={{ width: '100vw' }}>
+                  <a href={`https://reddit.com/${permalink}`} target="_blank">
+                    <img width="100%" src={url} alt={title} />
+                  </a>
+                </div>
+              )
         )
     }
   />
@@ -208,9 +210,11 @@ const Inner = ({ loading, data, error }) =>
           <div>
             {
               data.data.children.map(({ data: { title, id, url, permalink } }) => 
-                <a href={permalink} target="_blank">
-                  <img src={url} alt={title} />
-                </a>
+                <div key={id} style={{ width: '100vw' }}>
+                  <a href={`https://reddit.com/${permalink}`} target="_blank">
+                    <img width="100%" src={url} alt={title} />
+                  </a>
+                </div>
               )
             }
           </div>
@@ -218,7 +222,7 @@ const Inner = ({ loading, data, error }) =>
     )
 
 const propArgs = {
-  url: "https://www.reddit.com/r/catgif.json",
+  url: "https://www.reddit.com/r/catpics.json",
   transform: r => r.json(),
 }
 
