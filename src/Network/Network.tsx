@@ -23,7 +23,7 @@ export class Network extends React.Component<
 
   componentDidMount() {
     window.addEventListener("online", this.handleOnline);
-    window.removeEventListener("offline", this.handleOffline);
+    window.addEventListener("offline", this.handleOffline);
   }
 
   componentWillUnmount() {
