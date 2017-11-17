@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
+// TODO: add types
+
 export class Fetch extends Component {
   constructor (props) {
     super(props);
