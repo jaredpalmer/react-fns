@@ -8,11 +8,23 @@
   "commit": false,
   "contributors": [
     {
+      "login": "mjackson",
+      "name": "MICHAEL JACKSON",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/92839?v=4",
+      "profile": "https://twitter.com/mjackson",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
       "login": "prichodko",
       "name": "Pavel Prichodko",
       "avatar_url": "https://avatars2.githubusercontent.com/u/14926950?v=4",
       "profile": "https://github.com/prichodko",
-      "contributions": []
+      "contributions": [
+        "code",
+        "doc"
+      ]
     },
     {
       "login": "rpowell",
@@ -26,35 +38,56 @@
       "name": "Tim Brown",
       "avatar_url": "https://avatars2.githubusercontent.com/u/3269550?v=4",
       "profile": "https://github.com/brimtown",
-      "contributions": []
+      "contributions": [
+        "doc"
+      ]
     },
     {
       "login": "jtmthf",
       "name": "Jack Moore",
       "avatar_url": "https://avatars1.githubusercontent.com/u/8162598?v=4",
       "profile": "https://github.com/jtmthf",
-      "contributions": []
+      "contributions": [
+        "code"
+      ]
     },
     {
       "login": "daylerees",
       "name": "Dayle Rees",
       "avatar_url": "https://avatars0.githubusercontent.com/u/207870?v=4",
       "profile": "http://www.daylerees.com",
-      "contributions": []
+      "contributions": [
+        "doc"
+      ]
     },
     {
       "login": "thomasfl",
       "name": "Thomas Flemming",
       "avatar_url": "https://avatars3.githubusercontent.com/u/1520?v=4",
       "profile": "http://thomasflemming.no",
-      "contributions": []
+      "contributions": [
+        "doc"
+      ]
     },
     {
       "login": "skvale",
       "name": "Sam Kvale",
       "avatar_url": "https://avatars0.githubusercontent.com/u/5314713?v=4",
       "profile": "http://skvale.github.io",
-      "contributions": []
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "rpowelll",
+      "name": "Rhys Powell",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/320910?v=4",
+      "profile": "http://rpowell.me",
+      "contributions": [
+        "code"
+      ]
     }
+    
   ]
 }
