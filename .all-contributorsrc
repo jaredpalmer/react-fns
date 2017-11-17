@@ -31,7 +31,9 @@
       "name": "Richard Powell",
       "avatar_url": "https://avatars3.githubusercontent.com/u/7615?v=4",
       "profile": "https://github.com/rpowell",
-      "contributions": []
+      "contributions": [
+        "code"
+      ]
     },
     {
       "login": "brimtown",
@@ -88,6 +90,5 @@
         "code"
       ]
     }
-    
   ]
 }
