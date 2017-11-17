@@ -1,0 +1,60 @@
+{
+  "projectName": "react-fns",
+  "projectOwner": "jaredpalmer",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "prichodko",
+      "name": "Pavel Prichodko",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/14926950?v=4",
+      "profile": "https://github.com/prichodko",
+      "contributions": []
+    },
+    {
+      "login": "rpowell",
+      "name": "Richard Powell",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7615?v=4",
+      "profile": "https://github.com/rpowell",
+      "contributions": []
+    },
+    {
+      "login": "brimtown",
+      "name": "Tim Brown",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3269550?v=4",
+      "profile": "https://github.com/brimtown",
+      "contributions": []
+    },
+    {
+      "login": "jtmthf",
+      "name": "Jack Moore",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8162598?v=4",
+      "profile": "https://github.com/jtmthf",
+      "contributions": []
+    },
+    {
+      "login": "daylerees",
+      "name": "Dayle Rees",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/207870?v=4",
+      "profile": "http://www.daylerees.com",
+      "contributions": []
+    },
+    {
+      "login": "thomasfl",
+      "name": "Thomas Flemming",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1520?v=4",
+      "profile": "http://thomasflemming.no",
+      "contributions": []
+    },
+    {
+      "login": "skvale",
+      "name": "Sam Kvale",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5314713?v=4",
+      "profile": "http://skvale.github.io",
+      "contributions": []
+    }
+  ]
+}

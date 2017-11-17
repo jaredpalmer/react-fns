@@ -391,3 +391,14 @@ See https://developer.mozilla.org/en-US/docs/WebAPI for the full list
 ## Author
 
 - Jared Palmer [@jaredpalmer](https://twitter.com/jaredpalmer)
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars2.githubusercontent.com/u/14926950?v=4" width="100px;"/><br /><sub>Pavel Prichodko</sub>](https://github.com/prichodko)<br /> | [<img src="https://avatars3.githubusercontent.com/u/7615?v=4" width="100px;"/><br /><sub>Richard Powell</sub>](https://github.com/rpowell)<br /> | [<img src="https://avatars2.githubusercontent.com/u/3269550?v=4" width="100px;"/><br /><sub>Tim Brown</sub>](https://github.com/brimtown)<br /> | [<img src="https://avatars1.githubusercontent.com/u/8162598?v=4" width="100px;"/><br /><sub>Jack Moore</sub>](https://github.com/jtmthf)<br /> | [<img src="https://avatars0.githubusercontent.com/u/207870?v=4" width="100px;"/><br /><sub>Dayle Rees</sub>](http://www.daylerees.com)<br /> | [<img src="https://avatars3.githubusercontent.com/u/1520?v=4" width="100px;"/><br /><sub>Thomas Flemming</sub>](http://thomasflemming.no)<br /> | [<img src="https://avatars0.githubusercontent.com/u/5314713?v=4" width="100px;"/><br /><sub>Sam Kvale</sub>](http://skvale.github.io)<br /> |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
