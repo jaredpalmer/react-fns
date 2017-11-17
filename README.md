@@ -193,6 +193,8 @@ export default Example
 
 ### `withFetch()`
 
+Unlike other enhancer functions, this one accepts arguments, same as the props of [Fetch](#fetch-props). If you've ever used [`connect`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) enhancer from redux, you might find `withFetch` to act in similar fashion. It takes the arguments and returns a function, which finally accepts your Inner component as the argument.
+
 ```js
 import { withFetch } from 'react-fns'
 
@@ -215,8 +217,12 @@ const Inner = ({ loading, data, error }) =>
         )
     )
 
+const propArgs = {
+  url: "https://www.reddit.com/r/catgif.json",
+  transform: r => r.json(),
+}
 
-export default withFetch(Inner)
+export default withFetch(propArgs)(Inner)
 ```
 
 
