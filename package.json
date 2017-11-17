@@ -1,6 +1,6 @@
 {
   "name": "react-fns",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Modern React components, hoc's, and utilities functions.",
   "main": "dist/index.js",
   "module": "dist/index.es6.js",
