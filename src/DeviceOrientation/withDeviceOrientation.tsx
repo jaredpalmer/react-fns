@@ -10,7 +10,7 @@ import { DeviceOrientation, DeviceOrientationProps } from './DeviceOrientation';
 import { hoistNonReactStatics } from '../hoistStatics';
 
 export function withDeviceOrientation<Props>(
-  Component: React.ComponentType<Props>
+  Component: React.ComponentType<Props & DeviceOrientationProps>
 ) {
   const S: React.SFC<Props> = props => {
     return (

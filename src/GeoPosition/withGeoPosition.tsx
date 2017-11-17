@@ -9,7 +9,9 @@ import * as React from 'react';
 import { GeoPosition, GeoPositionProps } from './GeoPosition';
 import { hoistNonReactStatics } from '../hoistStatics';
 
-export function withGeoPosition<Props>(Component: React.ComponentType<Props>) {
+export function withGeoPosition<Props>(
+  Component: React.ComponentType<Props & GeoPositionProps>
+) {
   const S: React.SFC<Props> = props => {
     return (
       <GeoPosition

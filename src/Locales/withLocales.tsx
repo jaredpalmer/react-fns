@@ -23,7 +23,3 @@ export function withLocales<Props>(
     Component as React.ComponentClass<Props & LocalesProps>
   ) as React.ComponentType<Props>;
 }
-
-export const Wcroll = withLocales<{ hello: string }>(({ locale }) => {
-  return <div>{locale}</div>;
-});
