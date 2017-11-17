@@ -1,6 +1,13 @@
-import * as React from "react";
-import { SharedRenderProps } from "../types";
-import { isEmptyChildren } from "../utils";
+/**
+ * Copyright (c) 2017-present Jared Palmer
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import * as React from 'react';
+import { SharedRenderProps } from '../types';
+import { isEmptyChildren } from '../utils';
 
 export interface NetworkProps {
   online: boolean;
@@ -22,13 +29,13 @@ export class Network extends React.Component<
   };
 
   componentDidMount() {
-    window.addEventListener("online", this.handleOnline);
-    window.addEventListener("offline", this.handleOffline);
+    window.addEventListener('online', this.handleOnline);
+    window.addEventListener('offline', this.handleOffline);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("online", this.handleOnline);
-    window.removeEventListener("offline", this.handleOffline);
+    window.removeEventListener('online', this.handleOnline);
+    window.removeEventListener('offline', this.handleOffline);
   }
 
   render() {
@@ -38,7 +45,7 @@ export class Network extends React.Component<
       : render
         ? (render as any)(props)
         : children // children come last, always called
-          ? typeof children === "function"
+          ? typeof children === 'function'
             ? children(this.state)
             : !isEmptyChildren(children) ? React.Children.only(children) : null
           : null;

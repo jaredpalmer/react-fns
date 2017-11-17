@@ -1,6 +1,13 @@
-import * as React from "react";
-import { SharedRenderProps } from "../types";
-import { isEmptyChildren } from "../utils";
+/**
+ * Copyright (c) 2017-present Jared Palmer
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import * as React from 'react';
+import { SharedRenderProps } from '../types';
+import { isEmptyChildren } from '../utils';
 
 export interface DeviceOrientationProps {
   alpha: number | null;
@@ -17,7 +24,7 @@ export class DeviceOrientation extends React.Component<
     alpha: null,
     beta: null,
     gamma: null,
-    absolute: false
+    absolute: false,
   };
 
   handleDeviceOrientation = (e: DeviceOrientationEvent) => {
@@ -25,13 +32,13 @@ export class DeviceOrientation extends React.Component<
       beta: e.beta,
       alpha: e.alpha,
       gamma: e.gamma,
-      absolute: e.absolute
+      absolute: e.absolute,
     });
   };
 
   componentDidMount() {
     window.addEventListener(
-      "deviceorientation",
+      'deviceorientation',
       this.handleDeviceOrientation,
       true
     );
@@ -39,7 +46,7 @@ export class DeviceOrientation extends React.Component<
 
   componentWillUnmount() {
     window.removeEventListener(
-      "deviceorientation",
+      'deviceorientation',
       this.handleDeviceOrientation
     );
   }
@@ -51,7 +58,7 @@ export class DeviceOrientation extends React.Component<
       : render
         ? (render as any)(props)
         : children // children come last, always called
-          ? typeof children === "function"
+          ? typeof children === 'function'
             ? children(this.state)
             : !isEmptyChildren(children) ? React.Children.only(children) : null
           : null;

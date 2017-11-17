@@ -1,6 +1,13 @@
-import * as React from "react";
-import { SharedRenderProps } from "../types";
-import { isEmptyChildren } from "../utils";
+/**
+ * Copyright (c) 2017-present Jared Palmer
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import * as React from 'react';
+import { SharedRenderProps } from '../types';
+import { isEmptyChildren } from '../utils';
 
 export interface GeoPositionProps {
   isLoading: boolean;
@@ -18,7 +25,7 @@ export class GeoPosition extends React.Component<
   geoId: any;
 
   state = {
-    isLoading: true
+    isLoading: true,
   };
 
   componentDidMount() {
@@ -33,9 +40,9 @@ export class GeoPosition extends React.Component<
           isLoading: false,
           coords: {
             latitude: position.coords.latitude,
-            longitude: position.coords.longitude
+            longitude: position.coords.longitude,
           },
-          error: undefined
+          error: undefined,
         }),
       (error: PositionError) => this.setState({ error, isLoading: false })
     );
@@ -52,7 +59,7 @@ export class GeoPosition extends React.Component<
       : render
         ? (render as any)(props)
         : children // children come last, always called
-          ? typeof children === "function"
+          ? typeof children === 'function'
             ? children(this.state)
             : !isEmptyChildren(children) ? React.Children.only(children) : null
           : null;

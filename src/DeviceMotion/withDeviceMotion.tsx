@@ -1,6 +1,13 @@
-import * as React from "react";
-import { DeviceMotion, DeviceMotionProps } from "./DeviceMotion";
-import { hoistNonReactStatics } from "../hoistStatics";
+/**
+ * Copyright (c) 2017-present Jared Palmer
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import * as React from 'react';
+import { DeviceMotion, DeviceMotionProps } from './DeviceMotion';
+import { hoistNonReactStatics } from '../hoistStatics';
 
 export function withDeviceMotion<Props>(Component: React.ComponentType<Props>) {
   const S: React.SFC<Props> = props => {

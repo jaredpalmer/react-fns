@@ -1,6 +1,13 @@
-import * as React from "react";
-import { SharedRenderProps } from "../types";
-import { isEmptyChildren } from "../utils";
+/**
+ * Copyright (c) 2017-present Jared Palmer
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import * as React from 'react';
+import { SharedRenderProps } from '../types';
+import { isEmptyChildren } from '../utils';
 
 export interface LocalesProps {
   locale: string;
@@ -28,16 +35,16 @@ export class Locales extends React.Component<
 
   handleLanguageChange = () => {
     this.setState({
-      locale: this.preferredLocales()
+      locale: this.preferredLocales(),
     });
   };
 
   componentDidMount() {
-    window.addEventListener("languagechange", this.handleLanguageChange);
+    window.addEventListener('languagechange', this.handleLanguageChange);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("languagechange", this.handleLanguageChange);
+    window.removeEventListener('languagechange', this.handleLanguageChange);
   }
 
   render() {
@@ -47,7 +54,7 @@ export class Locales extends React.Component<
       : render
         ? (render as any)(props)
         : children // children come last, always called
-          ? typeof children === "function"
+          ? typeof children === 'function'
             ? children(this.state)
             : !isEmptyChildren(children) ? React.Children.only(children) : null
           : null;

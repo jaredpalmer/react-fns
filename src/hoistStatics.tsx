@@ -1,4 +1,13 @@
-import { ComponentClass } from "react";
+/**
+ * Copyright (c) 2017-present Jared Palmer
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+export * from './utils/isEmptyChildren';
+
+import { ComponentClass } from 'react';
 
 const REACT_STATICS: any = {
   childContextTypes: true,
@@ -8,7 +17,7 @@ const REACT_STATICS: any = {
   getDefaultProps: true,
   mixins: true,
   propTypes: true,
-  type: true
+  type: true,
 };
 
 const KNOWN_STATICS: any = {
@@ -18,7 +27,7 @@ const KNOWN_STATICS: any = {
   caller: true,
   callee: true,
   arguments: true,
-  arity: true
+  arity: true,
 };
 
 const getOwnPropertySymbols = Object.getOwnPropertySymbols;
@@ -32,7 +41,7 @@ export function hoistNonReactStatics<P>(
   sourceComponent: ComponentClass<any>,
   blacklist?: { [name: string]: boolean }
 ): ComponentClass<P> {
-  if (typeof sourceComponent !== "string") {
+  if (typeof sourceComponent !== 'string') {
     // don't hoist over string (html) components
 
     if (objectPrototype) {
@@ -58,7 +67,7 @@ export function hoistNonReactStatics<P>(
         // Only hoist enumerables and non-enumerable functions
         if (
           propIsEnumerable.call(sourceComponent, key) ||
-          typeof (sourceComponent as any)[key] === "function"
+          typeof (sourceComponent as any)[key] === 'function'
         ) {
           try {
             // Avoid failures from read-only properties

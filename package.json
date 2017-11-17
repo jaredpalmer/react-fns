@@ -14,7 +14,8 @@
     "build":
       "tsc && cross-env NODE_ENV=production rollup -c && cross-env NODE_ENV=development rollup -c && rimraf compiled",
     "prepublish": "npm run build",
-    "format": "prettier --write 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
+    "format":
+      "prettier --trailing-comma es5 --single-quote  --write 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -70,10 +71,7 @@
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": [
-      "<rootDir>/test/**/*.ts?(x)",
-      "<rootDir>/test/**/?(*.)(spec|test).ts?(x)"
-    ],
+    "testMatch": ["<rootDir>/src/**/?(*.)(spec|test).ts?(x)"],
     "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleFileExtensions": ["ts", "tsx", "js", "json"]
   },

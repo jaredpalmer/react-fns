@@ -1,6 +1,13 @@
-import * as React from "react";
-import { SharedRenderProps } from "../types";
-import { isEmptyChildren } from "../utils";
+/**
+ * Copyright (c) 2017-present Jared Palmer
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import * as React from 'react';
+import { SharedRenderProps } from '../types';
+import { isEmptyChildren } from '../utils';
 
 export interface DeviceMotionProps {
   acceleration: DeviceAcceleration;
@@ -17,19 +24,19 @@ export class DeviceMotion extends React.Component<
     acceleration: {
       x: null,
       y: null,
-      z: null
+      z: null,
     },
     accelerationIncludingGravity: {
       x: null,
       y: null,
-      z: null
+      z: null,
     },
     rotationRate: {
       alpha: null,
       beta: null,
-      gamma: null
+      gamma: null,
     },
-    interval: 0
+    interval: 0,
   };
 
   handleDeviceMotion = (e: DeviceMotionEvent) => {
@@ -37,16 +44,16 @@ export class DeviceMotion extends React.Component<
       acceleration: e.acceleration,
       accelerationIncludingGravity: e.accelerationIncludingGravity,
       rotationRate: e.rotationRate,
-      interval: e.interval
+      interval: e.interval,
     });
   };
 
   componentDidMount() {
-    window.addEventListener("deviceMotion", this.handleDeviceMotion, true);
+    window.addEventListener('deviceMotion', this.handleDeviceMotion, true);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("deviceMotion", this.handleDeviceMotion);
+    window.removeEventListener('deviceMotion', this.handleDeviceMotion);
   }
 
   render() {
@@ -56,7 +63,7 @@ export class DeviceMotion extends React.Component<
       : render
         ? (render as any)(props)
         : children // children come last, always called
-          ? typeof children === "function"
+          ? typeof children === 'function'
             ? children(this.state)
             : !isEmptyChildren(children) ? React.Children.only(children) : null
           : null;
