@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-class Fetch extends Component {
+export class Fetch extends Component {
   constructor (props) {
     super(props);
     
@@ -47,7 +47,7 @@ class Fetch extends Component {
   render () {
     const { children, render, component } = this.props;
     const { loading, data, error } = this.state;
-    const renderProp = children || render || component;
+    const renderProp = render || component || children;
     
     return renderProp({ loading, data, error });
   }
@@ -71,5 +71,3 @@ Fetch.propTypes = {
   component: PropTypes.func,
   children: PropTypes.func,
 };
-
-export default Fetch;
