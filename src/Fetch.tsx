@@ -32,6 +32,8 @@ class Fetch extends Component {
       transform = r => r.text(),
       cache = 'default',
       children,
+      render,
+      component,
       ...rest
     } = props;
     
@@ -42,10 +44,11 @@ class Fetch extends Component {
   }
   
   render () {
-    const { children } = this.props;
+    const { children, render, component } = this.props;
     const { loading, data, error } = this.state;
-
-    return children({ loading, data, error });
+    const renderProp = children || render || component;
+    
+    return renderProp({ loading, data, error });
   }
 }
 
@@ -63,6 +66,8 @@ Fetch.propTypes = {
   ]),
   url: PropTypes.string,
   transform: PropTypes.func,
+  render: PropTypes.func,
+  component: PropTypes.func,
   children: PropTypes.func,
 };
 
