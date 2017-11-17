@@ -17,7 +17,7 @@ export interface DeviceMotionProps {
 }
 
 export class DeviceMotion extends React.Component<
-  SharedRenderProps<{}>,
+  SharedRenderProps<DeviceMotionProps>,
   DeviceMotionProps
 > {
   state: DeviceMotionProps = {

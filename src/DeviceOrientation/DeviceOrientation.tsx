@@ -17,7 +17,7 @@ export interface DeviceOrientationProps {
 }
 
 export class DeviceOrientation extends React.Component<
-  SharedRenderProps<{}>,
+  SharedRenderProps<DeviceOrientationProps>,
   DeviceOrientationProps
 > {
   state: DeviceOrientationProps = {

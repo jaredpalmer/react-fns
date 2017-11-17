@@ -15,7 +15,7 @@ export interface NetworkProps {
 }
 
 export class Network extends React.Component<
-  SharedRenderProps<{}>,
+  SharedRenderProps<NetworkProps>,
   NetworkProps
 > {
   state: NetworkProps = { online: false };

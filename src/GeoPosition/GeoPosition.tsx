@@ -19,7 +19,7 @@ export interface GeoPositionProps {
 }
 
 export class GeoPosition extends React.Component<
-  SharedRenderProps<{}>,
+  SharedRenderProps<GeoPositionProps>,
   GeoPositionProps
 > {
   geoId: any;

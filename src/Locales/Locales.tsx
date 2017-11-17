@@ -21,7 +21,7 @@ declare namespace Intl {
 }
 
 export class Locales extends React.Component<
-  SharedRenderProps<{}>,
+  SharedRenderProps<LocalesProps>,
   LocalesProps
 > {
   state: LocalesProps = { locale: this.preferredLocales() };
