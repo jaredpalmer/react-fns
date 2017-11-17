@@ -48,11 +48,11 @@ export class Locales extends React.Component<
   }
 
   render() {
-    const { render, component, children, ...props } = this.props;
+    const { render, component, children } = this.props;
     return component
-      ? React.createElement(component as any, props)
+      ? React.createElement(component as any, this.state)
       : render
-        ? (render as any)(props)
+        ? (render as any)(this.state)
         : children // children come last, always called
           ? typeof children === 'function'
             ? children(this.state)
