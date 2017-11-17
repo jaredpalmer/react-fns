@@ -71,7 +71,7 @@ Fetch.propTypes = {
   children: PropTypes.func,
 };
 
-const withFetch = ({ url, transform }) => Inner =>
+const withFetch = ({ url, transform }) => Inner => () =>
   <Fetch
     url={url}
     transform={transform}
