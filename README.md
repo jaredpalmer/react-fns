@@ -20,6 +20,10 @@ _There's a lot more to do. The goal is to standardize almost every Web API on [M
     - [DeviceOrientation props](#deviceorientation-props)
     - [`<DeviceOrientation render/>`](#deviceorientation-render)
     - [`withDeviceOrientation()`](#withdeviceorientation)
+  - [Fetch](#fetch)
+    - [Fetch props](#fetch-props)
+    - [`<Fetch render/>`](#fetch-render)
+    - [`withFetch()`](#withfetch)    
   - [Network](#network)
     - [Network props](#network-props)
     - [`<Network render/>`](#network-render)
@@ -151,6 +155,80 @@ const Inner = ({ alpha, beta, gamma, absolute }) =>
 
 export default withDeviceOrientation(Inner)
 ```
+## Fetch
+
+Use the [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) API. You need to polyfill it yourself though. We recommend [`unfetch`](https://github.com/developit/unfetch) a light-weight polyfill.
+
+### Fetch props
+
+- `url: string`: URL you wish to fetch from.
+- `transform?: Function`: Transform function for response. You can use any of fetch API's [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response#Methods) methods. Defaults to `res => res.text()`.
+
+### `<Fetch render/>`
+
+```js
+import { Fetch } from 'react-fns'
+
+const Example = () =>
+  <Fetch
+    url="https://www.reddit.com/r/catpics.json"
+    transform={r => r.json()}
+    render={({ loading, data, error }) =>
+      loading
+        ? "Loading..."
+        : (
+          error
+            ? "Error fetching meows!"
+            : data.data.children.map(({ data: { title, id, url, permalink } }) => 
+                <div key={id} style={{ width: '100vw' }}>
+                  <a href={`https://reddit.com/${permalink}`} target="_blank">
+                    <img width="100%" src={url} alt={title} />
+                  </a>
+                </div>
+              )
+        )
+    }
+  />
+
+export default Example
+```
+
+### `withFetch()`
+
+Unlike other enhancer functions, this one accepts arguments, same as the props of [Fetch](#fetch-props). If you've ever used [`connect`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) enhancer from redux, you might find `withFetch` to act in similar fashion. It takes the arguments and returns a function, which finally accepts your Inner component as the argument.
+
+```js
+import { withFetch } from 'react-fns'
+
+const Inner = ({ loading, data, error }) =>
+  loading
+    ? "Loading..."
+    : (
+      error
+        ? "Error fetching meows!"
+        : (
+          <div>
+            {
+              data.data.children.map(({ data: { title, id, url, permalink } }) => 
+                <div key={id} style={{ width: '100vw' }}>
+                  <a href={`https://reddit.com/${permalink}`} target="_blank">
+                    <img width="100%" src={url} alt={title} />
+                  </a>
+                </div>
+              )
+            }
+          </div>
+        )
+    )
+
+const propArgs = {
+  url: "https://www.reddit.com/r/catpics.json",
+  transform: r => r.json(),
+}
+
+export default withFetch(propArgs)(Inner)
+```
+
 
 ## Network
 
