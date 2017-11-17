@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Modern React components, hoc's, and utilities functions.",
   "main": "dist/index.js",
+  "module": "dist/index.es6.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --env=jsdom",
