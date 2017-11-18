@@ -15,7 +15,8 @@ describe('<Scroll />', () => {
       ReactDOM.render(
         <Scroll
           render={scrollProps =>
-            expect(scrollProps).toEqual({ x: 0, y: 0 }) || null}
+            expect(scrollProps).toEqual({ x: 0, y: 0 }) || null
+          }
         />,
         node
       );
