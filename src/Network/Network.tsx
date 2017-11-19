@@ -7,7 +7,7 @@
 
 import * as React from 'react';
 import { SharedRenderProps } from '../types';
-import { isEmptyChildren } from '../utils';
+import { renderComponentWithRenderProps } from '../utils';
 
 export interface NetworkProps {
   online: boolean;
@@ -39,15 +39,6 @@ export class Network extends React.Component<
   }
 
   render() {
-    const { render, component, children } = this.props;
-    return component
-      ? React.createElement(component as any, this.state)
-      : render
-        ? (render as any)(this.state)
-        : children // children come last, always called
-          ? typeof children === 'function'
-            ? children(this.state)
-            : !isEmptyChildren(children) ? React.Children.only(children) : null
-          : null;
+    return renderComponentWithRenderProps(this.props, this.state) as any;
   }
 }
