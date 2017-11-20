@@ -8,7 +8,7 @@
 import * as React from 'react';
 import { SharedRenderProps } from '../types';
 import { isEmptyChildren } from '../utils';
-import { debounce } from '../utils/debounce';
+import { throttle } from '../utils/throttle';
 
 export interface ScrollProps {
   x: number;
@@ -16,7 +16,7 @@ export interface ScrollProps {
 }
 
 export interface ScrollConfig {
-  debounce?: number;
+  throttle?: number;
 }
 
 export class Scroll extends React.Component<
@@ -24,14 +24,14 @@ export class Scroll extends React.Component<
   ScrollProps
 > {
   static defaultProps = {
-    debounce: 100,
+    throttle: 100,
   };
 
   state: ScrollProps = { x: 0, y: 0 };
 
-  handleWindowScroll = debounce(() => {
+  handleWindowScroll = throttle(() => {
     this.setState({ x: window.scrollX, y: window.scrollY });
-  }, this.props.debounce);
+  }, this.props.throttle);
 
   componentDidMount() {
     this.handleWindowScroll();
