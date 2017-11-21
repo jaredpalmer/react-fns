@@ -8,7 +8,7 @@
 import * as React from 'react';
 import { SharedRenderProps } from '../types';
 import { isEmptyChildren } from '../utils';
-import { debounce } from '../utils/debounce';
+import { throttle } from '../utils/throttle';
 
 export interface WidnowSizeProps {
   width: number;
@@ -16,7 +16,7 @@ export interface WidnowSizeProps {
 }
 
 export interface WindowSizeConfig {
-  debounce?: number;
+  throttle?: number;
 }
 
 export class WindowSize extends React.Component<
@@ -29,9 +29,9 @@ export class WindowSize extends React.Component<
 
   state: WidnowSizeProps = { width: 0, height: 0 };
 
-  handleWindowSize = debounce(() => {
+  handleWindowSize = throttle(() => {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
-  }, this.props.debounce);
+  }, this.props.throttle);
 
   componentDidMount() {
     this.handleWindowSize();
