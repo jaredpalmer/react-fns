@@ -37,6 +37,10 @@ _There's a lot more to do. The goal is to standardize almost every Web API on [M
     - [Scroll props](#scroll-props)
     - [`<Scroll render/>`](#scroll-render)
     - [`withScroll()`](#withscroll)
+  - [WindowSize](#windowsize)
+    - [WindowSize props](#windowsize-props)
+    - [`<WindowSize render/>`](#windowsize-render)
+    - [`withWindowSize()`](#withwindowsize)
   - [Locales](#locales)
     - [Locales props](#locales-props)
     - [`<Locales render/>`](#locales-render)
@@ -50,6 +54,7 @@ _There's a lot more to do. The goal is to standardize almost every Web API on [M
     - [Useful components](#useful-components)
     - [Browser API's](#browser-apis)
   - [Author](#author)
+  - [Contributors](#contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -301,6 +306,42 @@ import { withScroll } from 'react-fns'
 const Inner = ({ x, y }) => <div>Scroll Position: {x}, {y}</div>
 
 export default withScroll(Inner)
+```
+
+## WindowSize
+
+### WindowSize props
+
+- `width`: Width of browser viewport (`window.innerWidth`)
+- `height`: Height of browser viewport (`window.innerHeight`)
+
+### `<WindowSize render/>`
+
+Returns `window.innerWidth` and `window.innerHeight`.
+
+```js
+import { WindowSize } from 'react-fns'
+
+const Example = () =>
+  <WindowSize
+    render={({ width, height }) =>
+     <div>Window size: {width}, {height}</div>
+    }
+  />
+
+export default Example
+```
+
+### `withWindowSize()`
+
+Injects `window.innerWidth` and `window.innerHeight` as `width` and `height` props.
+
+```js
+import { withWindowSize } from 'react-fns'
+
+const Inner = ({ width, height }) => <div>Window size: {width}, {height}</div>
+
+export default withWindowSize(Inner)
 ```
 
 ## Locales

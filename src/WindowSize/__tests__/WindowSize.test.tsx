@@ -1,21 +1,21 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { Scroll } from '../Scroll';
+import { WindowSize } from '../WindowSize';
 
-describe('<Scroll />', () => {
-  describe('<Scroll render />', () => {
+describe('<WindowSize />', () => {
+  describe('<WindowSize render />', () => {
     const node = document.createElement('div');
 
     afterEach(() => {
       ReactDOM.unmountComponentAtNode(node);
     });
 
-    it('receives { x, y } props', () => {
+    it('receives { width, height } props', () => {
       ReactDOM.render(
-        <Scroll
-          render={scrollProps =>
-            expect(scrollProps).toEqual({ x: 0, y: 0 }) || null
+        <WindowSize
+          render={sizeProps =>
+            expect(sizeProps).toEqual({ width: 0, height: 0 }) || null
           }
         />,
         node
@@ -24,10 +24,10 @@ describe('<Scroll />', () => {
 
     it('renders elements', () => {
       ReactDOM.render(
-        <Scroll
-          render={scrollProps => (
+        <WindowSize
+          render={sizeProps => (
             <div>
-              x: {scrollProps.x}, y: {scrollProps.y}
+              x: {sizeProps.width}, y: {sizeProps.width}
             </div>
           )}
         />,
