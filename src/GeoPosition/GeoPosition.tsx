@@ -34,7 +34,7 @@ export class GeoPosition extends React.Component<
 
   requestGeo = () => {
     this.setState({ isLoading: true });
-    this.geoId = navigator.geolocation.getCurrentPosition(
+    this.geoId = navigator.geolocation.watchPosition(
       (position: Position) =>
         this.setState({
           isLoading: false,
