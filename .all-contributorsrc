@@ -89,6 +89,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jreinhold",
+      "name": "Jeppe Reinhold",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5678122?v=4",
+      "profile": "https://reinhold.is",
+      "contributions": [
+        "doc"
+      ]
     }
   ]
 }
