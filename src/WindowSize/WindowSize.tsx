@@ -10,36 +10,36 @@ import { SharedRenderProps } from '../types';
 import { isEmptyChildren } from '../utils';
 import { throttle } from '../utils/throttle';
 
-export interface ScrollProps {
-  x: number;
-  y: number;
+export interface WidnowSizeProps {
+  width: number;
+  height: number;
 }
 
-export interface ScrollConfig {
+export interface WindowSizeConfig {
   throttle?: number;
 }
 
-export class Scroll extends React.Component<
-  ScrollConfig & SharedRenderProps<ScrollProps>,
-  ScrollProps
+export class WindowSize extends React.Component<
+  WindowSizeConfig & SharedRenderProps<WidnowSizeProps>,
+  WidnowSizeProps
 > {
   static defaultProps = {
-    throttle: 100,
+    debounce: 100,
   };
 
-  state: ScrollProps = { x: 0, y: 0 };
+  state: WidnowSizeProps = { width: 0, height: 0 };
 
-  handleWindowScroll = throttle(() => {
-    this.setState({ x: window.scrollX, y: window.scrollY });
+  handleWindowSize = throttle(() => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }, this.props.throttle);
 
   componentDidMount() {
-    this.handleWindowScroll();
-    window.addEventListener('scroll', this.handleWindowScroll);
+    this.handleWindowSize();
+    window.addEventListener('resize', this.handleWindowSize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleWindowScroll);
+    window.removeEventListener('resize', this.handleWindowSize);
   }
 
   render() {

@@ -13,11 +13,16 @@
     "build": "tsc && cross-env NODE_ENV=production rollup -c && cross-env NODE_ENV=development rollup -c && rimraf compiled",
     "prepublish": "npm run build",
     "format": "prettier --trailing-comma es5 --single-quote  --write 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
+    "doctoc": "doctoc .",
     "precommit": "lint-staged"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "prettier --write",
+      "git add"
+    ],
+    "README.md": [
+      "doctoc .",
       "git add"
     ]
   },
@@ -50,6 +55,7 @@
     "@types/react-dom": "15.5.1",
     "@types/react-test-renderer": "15.5.2",
     "cross-env": "5.0.5",
+    "doctoc": "^1.3.0",
     "husky": "^0.14.3",
     "jest": "^20.0.4",
     "lint-staged": "^5.0.0",
