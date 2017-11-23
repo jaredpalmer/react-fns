@@ -3,11 +3,9 @@ import { SharedRenderProps } from '../types';
 import { isEmptyChildren } from './isEmptyChildren';
 
 export function renderComponentWithRenderProps<S>(
-  props: SharedRenderProps<S>,
+  { render, component, children }: SharedRenderProps<S>,
   state: S
 ) {
-  const { render, component, children } = props;
-
   if (component) {
     return React.createElement(component as any, state);
   }
