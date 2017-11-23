@@ -92,9 +92,9 @@ import { DeviceMotion } from 'react-fns'
 
 const Example = () =>
   <DeviceMotion
-    render={({ alpha, beta, gamma, absolute }) =>
+    render={({ acceleration, accelerationIncludingGravity, rotationRate, interval }) =>
      <pre>
-      {JSON.stringify({alpha, beta, gamma}, null, 2)}
+      {JSON.stringify({acceleration, accelerationIncludingGravity, rotationRate, interval}, null, 2)}
      </pre>
     }
   />
@@ -107,9 +107,9 @@ export default Example
 ```js
 import { withDeviceMotion } from 'react-fns'
 
-const Inner = ({ alpha, beta, gamma, absolute }) =>
+const Inner = ({ acceleration, accelerationIncludingGravity, rotationRate, interval }) =>
   <pre>
-    {JSON.stringify({alpha, beta, gamma}, null, 2)}
+    {JSON.stringify({acceleration, accelerationIncludingGravity, rotationRate, interval}, null, 2)}
   </pre>
 
 export default withDeviceMotion(Inner)
@@ -136,7 +136,7 @@ const Example = () =>
   <DeviceOrientation
     render={({ alpha, beta, gamma, absolute }) =>
      <pre>
-      {JSON.stringify({alpha, beta, gamma}, null, 2)}
+      {JSON.stringify({alpha, beta, gamma, absolute}, null, 2)}
      </pre>
     }
   />
@@ -151,7 +151,7 @@ import { withDeviceOrientation } from 'react-fns'
 
 const Inner = ({ alpha, beta, gamma, absolute }) =>
   <pre>
-    {JSON.stringify({alpha, beta, gamma}, null, 2)}
+    {JSON.stringify({alpha, beta, gamma, absolute}, null, 2)}
   </pre>
 
 export default withDeviceOrientation(Inner)
