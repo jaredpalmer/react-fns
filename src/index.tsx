@@ -11,3 +11,5 @@ export * from './DeviceOrientation';
 export * from './Network';
 export * from './GeoPosition';
 export * from './Media';
+export * from './WindowSize';
+export * from './Locales';
