@@ -10,7 +10,7 @@ import { SharedRenderProps } from '../types';
 import { isEmptyChildren } from '../utils';
 import { throttle } from '../utils/throttle';
 
-export interface WidnowSizeProps {
+export interface WindowSizeProps {
   width: number;
   height: number;
 }
@@ -20,14 +20,14 @@ export interface WindowSizeConfig {
 }
 
 export class WindowSize extends React.Component<
-  WindowSizeConfig & SharedRenderProps<WidnowSizeProps>,
-  WidnowSizeProps
+  WindowSizeConfig & SharedRenderProps<WindowSizeProps>,
+  WindowSizeProps
 > {
   static defaultProps = {
     debounce: 100,
   };
 
-  state: WidnowSizeProps = { width: 0, height: 0 };
+  state: WindowSizeProps = { width: 0, height: 0 };
 
   handleWindowSize = throttle(() => {
     this.setState({ width: window.innerWidth, height: window.innerHeight });

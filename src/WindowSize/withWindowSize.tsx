@@ -6,22 +6,22 @@
  */
 
 import * as React from 'react';
-import { WindowSize, WidnowSizeProps } from './WindowSize';
+import { WindowSize, WindowSizeProps } from './WindowSize';
 import { hoistNonReactStatics } from '../hoistStatics';
 
 export function withWindowSize<Props>(
-  Component: React.ComponentType<Props & WidnowSizeProps>
+  Component: React.ComponentType<Props & WindowSizeProps>
 ) {
   const S: React.SFC<Props> = props => {
     return (
       <WindowSize
-        render={(p: WidnowSizeProps) => <Component {...props} {...p} />}
+        render={(p: WindowSizeProps) => <Component {...props} {...p} />}
       />
     );
   };
 
   return hoistNonReactStatics<Props>(
     S as any,
-    Component as React.ComponentClass<Props & WidnowSizeProps>
+    Component as React.ComponentClass<Props & WindowSizeProps>
   ) as React.ComponentType<Props>;
 }
