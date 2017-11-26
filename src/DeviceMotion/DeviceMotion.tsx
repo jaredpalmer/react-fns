@@ -10,10 +10,10 @@ import { SharedRenderProps } from '../types';
 import { isEmptyChildren } from '../utils';
 
 export interface DeviceMotionProps {
-  acceleration: DeviceAcceleration;
-  accelerationIncludingGravity: DeviceAcceleration;
-  rotationRate: DeviceRotationRate;
-  interval: number;
+  acceleration: DeviceAcceleration | null;
+  accelerationIncludingGravity: DeviceAcceleration | null;
+  rotationRate: DeviceRotationRate | null;
+  interval: number | null;
 }
 
 export class DeviceMotion extends React.Component<
@@ -49,11 +49,11 @@ export class DeviceMotion extends React.Component<
   };
 
   componentDidMount() {
-    window.addEventListener('deviceMotion', this.handleDeviceMotion, true);
+    window.addEventListener('devicemotion', this.handleDeviceMotion, true);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('deviceMotion', this.handleDeviceMotion);
+    window.removeEventListener('devicemotion', this.handleDeviceMotion);
   }
 
   render() {
