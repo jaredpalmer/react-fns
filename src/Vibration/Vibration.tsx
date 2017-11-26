@@ -6,12 +6,12 @@ import { supportsVibrationAPI } from '../utils/featureDetection';
 export type VibrationPattern = number | Array<number>;
 export interface VibrationProps {
   vibrate: (pattern: VibrationPattern) => void;
-  persistentVibrate: (pattern: VibrationPattern, interval?: number) => void;
+  persistentVibrate: (pattern: VibrationPattern, interval?: number) => number;
   cancelVibrations: () => void;
 }
 
 export interface VibrationState {
-  currentPersistentVibrations: Array<number>;
+  persistentVibrations: Array<number>;
 }
 
 export class Vibration extends React.Component<
@@ -38,28 +38,29 @@ export class Vibration extends React.Component<
     const newPersistentVibration =
       window && window.setInterval(() => this.handleVibrate(pattern), interval);
     //push the new interval id to the list of ongoing vibrations
-    const currentPersistentVibrations = [
-      ...this.state.currentPersistentVibrations,
+    const persistentVibrations = [
+      ...this.state.persistentVibrations,
       newPersistentVibration,
     ];
-    this.setState({ currentPersistentVibrations });
+    this.setState({ persistentVibrations });
+    return newPersistentVibration;
   };
 
   handleCancelVibrations = () => {
     // cancel current vibration
     this.handleVibrate(0);
     //clear all persistent vibrations
-    this.state.currentPersistentVibrations.forEach(
+    this.state.persistentVibrations.forEach(
       intervalId => window && window.clearInterval(intervalId)
     );
-    this.setState({ currentPersistentVibrations: [] });
+    this.setState({ persistentVibrations: [] });
   };
 
   state = {
     vibrate: this.handleVibrate,
     persistentVibrate: this.handlePersistentVibrate,
     cancelVibrations: this.handleCancelVibrations,
-    currentPersistentVibrations: [],
+    persistentVibrations: [] as Array<number>,
   };
 
   render() {
