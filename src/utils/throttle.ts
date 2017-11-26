@@ -8,7 +8,7 @@
 
 export function throttle(func: Function, wait: Number) {
   let timeout: number | null = null;
-  let callbackArgs = null;
+  let callbackArgs: IArguments | null = null;
   const context = this;
 
   const later = () => {
