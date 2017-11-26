@@ -17,7 +17,7 @@
  */
 export const debounce = (func: Function, wait: number, immediate?: boolean) => {
   let timeout: any;
-  return function() {
+  return function(this: any) {
     var context = this,
       args = arguments;
     var later = function() {

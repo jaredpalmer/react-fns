@@ -24,7 +24,7 @@ export class Scroll extends React.Component<
   ScrollConfig & SharedRenderProps<ScrollProps>,
   ScrollProps
 > {
-  static defaultProps = {
+  static defaultProps: Partial<ScrollConfig> = {
     throttle: 100,
   };
 
@@ -32,7 +32,7 @@ export class Scroll extends React.Component<
 
   handleWindowScroll = throttle(() => {
     this.setState({ x: window.scrollX, y: window.scrollY });
-  }, this.props.throttle);
+  }, this.props.throttle!);
 
   componentDidMount() {
     this.handleWindowScroll();

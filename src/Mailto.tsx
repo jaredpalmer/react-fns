@@ -34,8 +34,8 @@ export const Mailto: React.SFC<MailtoProps> = ({
     <a
       href={`mailto:${email}?${qs.stringify({
         subject,
-        cc: cc.join(', '),
-        bcc: bcc.join(', '),
+        cc: cc && cc.join(', '),
+        bcc: bcc && bcc.join(', '),
         body,
       })}`}
       {...props}
