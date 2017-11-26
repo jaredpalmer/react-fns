@@ -20,7 +20,7 @@ export class Vibration extends React.Component<
 > {
   handleVibrate = (pattern: VibrationPattern) => {
     if (supportsVibrationAPI) {
-      return navigator.vibrate(pattern);
+      return navigator && navigator.vibrate(pattern);
     }
     return false;
   };
