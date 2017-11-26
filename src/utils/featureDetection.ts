@@ -9,3 +9,5 @@ try {
   (window as EventTarget).addEventListener('testPassive', undefined, opts);
   (window as EventTarget).removeEventListener('testPassive', undefined, opts);
 } catch (e) {}
+
+export const supportsVibrationAPI = 'vibrate' in navigator;
