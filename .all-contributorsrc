@@ -98,6 +98,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "vhfmag",
+      "name": "Victor Magalhães",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/357835?v=4",
+      "profile": "https://github.com/vhfmag",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ]
 }
