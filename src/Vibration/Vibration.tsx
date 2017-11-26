@@ -20,8 +20,9 @@ export class Vibration extends React.Component<
 > {
   handleVibrate = (pattern: VibrationPattern) => {
     if (supportsVibrationAPI) {
-      navigator.vibrate(pattern);
+      return navigator.vibrate(pattern);
     }
+    return false;
   };
 
   handlePersistentVibrate = (pattern: VibrationPattern, interval?: number) => {
