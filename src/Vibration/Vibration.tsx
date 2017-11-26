@@ -26,6 +26,12 @@ export class Vibration extends React.Component<
   };
 
   handlePersistentVibrate = (pattern: VibrationPattern, interval?: number) => {
+    //immediately start vibration, cancel persistency on pattern fail
+    const result = this.handleVibrate(pattern);
+    if (!result) {
+      return result;
+    }
+
     //calculate implicit interval based on the length of the vibration pattern
     if (!interval) {
       if (Array.isArray(pattern)) {
@@ -44,7 +50,7 @@ export class Vibration extends React.Component<
       newPersistentVibration,
     ];
     this.setState({ persistentVibrations });
-    return newPersistentVibration;
+    return result;
   };
 
   handleCancelVibrations = () => {
