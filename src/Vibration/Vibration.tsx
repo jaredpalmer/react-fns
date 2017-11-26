@@ -5,8 +5,8 @@ import { supportsVibrationAPI } from '../utils/featureDetection';
 
 export type VibrationPattern = number | Array<number>;
 export interface VibrationProps {
-  vibrate: (pattern: VibrationPattern) => void;
-  persistentVibrate: (pattern: VibrationPattern, interval?: number) => number;
+  vibrate: (pattern: VibrationPattern) => boolean;
+  persistentVibrate: (pattern: VibrationPattern, interval?: number) => boolean;
   cancelVibrations: () => void;
 }
 
