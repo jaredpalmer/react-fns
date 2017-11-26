@@ -6,7 +6,7 @@ import { supportsVibrationAPI } from '../utils/featureDetection';
 export type VibrationPattern = number | Array<number>;
 export interface VibrationProps {
   vibrate: (pattern: VibrationPattern) => void;
-  persistentVibrate: (pattern: VibrationPattern, interval: number) => void;
+  persistentVibrate: (pattern: VibrationPattern, interval?: number) => void;
   cancelVibrations: () => void;
 }
 
@@ -24,7 +24,16 @@ export class Vibration extends React.Component<
     }
   };
 
-  handlePersistentVibrate = (pattern: VibrationPattern, interval: number) => {
+  handlePersistentVibrate = (pattern: VibrationPattern, interval?: number) => {
+    //calculate implicit interval based on the length of the vibration pattern
+    if (!interval) {
+      if (Array.isArray(pattern)) {
+        interval = pattern.reduce((sum, value) => sum + value);
+      } else {
+        interval = pattern;
+      }
+    }
+
     //create new vibration on interval, and save the interval id
     const newPersistentVibration =
       window && window.setInterval(() => this.handleVibrate(pattern), interval);
