@@ -50,11 +50,11 @@ _There's a lot more to do. The goal is to standardize almost every Web API on [M
       - [Mailto props](#mailto-props)
     - [`<Sms />`](#sms-)
       - [Sms props](#sms-props)
-  - [Roadmap](#roadmap)
-    - [Useful components](#useful-components)
-    - [Browser API's](#browser-apis)
-  - [Author](#author)
-  - [Contributors](#contributors)
+- [Roadmap](#roadmap)
+  - [Useful components](#useful-components)
+  - [Browser API's](#browser-apis)
+- [Author](#author)
+- [Contributors](#contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -402,10 +402,10 @@ Renders `<a href="sms:..." />`
 - `phone: string`: Phone number
 - `body?: string`: Body copy of the text message
 
-## Roadmap
+# Roadmap
 
 
-### Useful components
+## Useful components
 
 - Fetch
 - Draggable
@@ -415,7 +415,7 @@ Renders `<a href="sms:..." />`
 - Parallax
 - Pin (to Top / to Bottom)
 
-### Browser API's
+## Browser API's
 
 See https://developer.mozilla.org/en-US/docs/WebAPI for the full list
 - MousePosition
@@ -429,11 +429,11 @@ See https://developer.mozilla.org/en-US/docs/WebAPI for the full list
 - Camera
 - Measure
 
-## Author
+# Author
 
 - Jared Palmer [@jaredpalmer](https://twitter.com/jaredpalmer)
 
-## Contributors
+# Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
