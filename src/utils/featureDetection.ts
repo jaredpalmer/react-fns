@@ -6,6 +6,6 @@ try {
       supportsPassiveListener = true;
     },
   });
-  (window as EventTarget).addEventListener('testPassive', null, opts);
-  (window as EventTarget).removeEventListener('testPassive', null, opts);
+  (window as EventTarget).addEventListener('testPassive', undefined, opts);
+  (window as EventTarget).removeEventListener('testPassive', undefined, opts);
 } catch (e) {}
