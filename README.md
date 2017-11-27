@@ -12,6 +12,10 @@ _There's a lot more to do. The goal is to standardize almost every Web API on [M
 
 - [API Reference](#api-reference)
   - [Higher Order Components / Render Props](#higher-order-components--render-props)
+  - [Canvas](#canvas)
+    - [Canvas props](#canvas-props)
+    - [`<Canvas render/>`](#canvas-render)
+    - [`withCanvas()`](#withcanvas)
   - [DeviceMotion](#devicemotion)
     - [DeviceMotion props](#devicemotion-props)
     - [`<DeviceMotion render/>`](#devicemotion-render)
@@ -71,6 +75,39 @@ Every render prop'd component shares the same three rendering methods:
 - `<Thing>{props => <Inner />}</Thing>>`
 
 All HoC's will pass through any and all additional props through to the inner component in addition to the props that they inject.
+
+## Canvas
+
+Component can be used to draw graphics
+
+### Canvas props
+
+- `width`
+- `height`
+- `className`
+- `style`
+
+### `<Canvas render/>`
+
+```js
+import { Canvas } from 'react-fns'
+
+const Example = () =>
+  <Canvas 
+    width={120}
+    height={120}
+    render={({ ctx }) => {
+      ctx.fillStyle = "green";
+      ctx.fillRect(10, 10, 100, 100);
+    }}
+  />
+
+export default Example
+```
+
+### `withCanvas()`
+
+Canvas don't support HOCs
 
 ## DeviceMotion
 
