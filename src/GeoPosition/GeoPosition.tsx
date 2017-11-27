@@ -7,7 +7,7 @@
 
 import * as React from 'react';
 import { SharedRenderProps } from '../types';
-import { renderComponentWithRenderProps } from '../utils';
+import { isEmptyChildren } from '../utils';
 
 export interface GeoPositionProps {
   isLoading: boolean;
@@ -53,6 +53,15 @@ export class GeoPosition extends React.Component<
   }
 
   render() {
-    return renderComponentWithRenderProps(this.props, this.state) as any;
+    const { render, component, children } = this.props;
+    return component
+      ? React.createElement(component as any, this.state)
+      : render
+        ? (render as any)(this.state)
+        : children // children come last, always called
+          ? typeof children === 'function'
+            ? children(this.state)
+            : !isEmptyChildren(children) ? React.Children.only(children) : null
+          : null;
   }
 }
