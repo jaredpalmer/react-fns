@@ -6,5 +6,6 @@
  */
 
 export * from './isEmptyChildren';
+export * from './renderComponentWithRenderProps';
 export * from './debounce';
 export * from './throttle';
