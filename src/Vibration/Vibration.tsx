@@ -64,7 +64,7 @@ export class Vibration extends React.Component<
   };
 
   state = {
-    vibrate: this.handleVibrate,
+    vibrate: (pattern: VibrationPattern) => this.handleVibrate(pattern),
     persistentVibrate: this.handlePersistentVibrate,
     cancelVibrations: this.handleCancelVibrations,
     persistentVibrations: [] as Array<number>,
