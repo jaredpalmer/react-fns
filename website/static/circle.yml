@@ -1,0 +1,7 @@
+# CircleCI by default tests every push to every branch. This mean automated release from source to master will trigger CI testing master.
+# we disable that. Piece and quiet: https://circleci.com/docs/1.0/configuration/#branches
+# master is cleared out on every push, so we can't manually put a circle.yml there. So we piggy back off static/ being copied over to master during deployment.
+general:
+  branches:
+    ignore:
+      - master

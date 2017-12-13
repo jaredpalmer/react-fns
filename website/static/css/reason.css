@@ -1,0 +1,226 @@
+/* These should be upstreamed to Docusaurus */
+
+table {
+  border: 1px solid #eee;
+}
+
+table thead {
+  border-bottom: 1px solid #eee;
+}
+
+table tr:nth-of-type(odd) {
+  background: $codeColor;
+}
+
+table tr th,
+table tr td {
+  border-right: 1px solid #eee;
+}
+
+/* Below are styles that should be global to all Reason-ecosystem sites
+ but which we have no current plans to upstream to Docusaurus. */
+
+/* 1. Independent scrolling of docs sidebar menu (requires pjax) */
+@media only screen and (min-width: 1024px) {
+  /* makes desktop nav scroll independently of content */
+  #docsNav.container.docsNavContainer .toc {
+    position: fixed;
+    overflow-y: scroll;
+    bottom: 0;
+    top: 0;
+    padding: 0;
+    padding-top: 90px;
+  }
+  /* safari fix */
+  #docsNav.container.docsNavContainer {
+    position: static;
+  }
+}
+
+/* 2. Custom code block styling */
+/* code */
+code {
+  padding: 2px 0;
+  background-color: rgba(0, 85, 170, 0.1);
+  box-shadow: 2px 0 rgba(0, 85, 170, 0.1), -2px 0 rgba(0, 85, 170, 0.1);
+  color: inherit;
+  border-radius: 0.3em;
+  /* avoids scale issues on mobile */
+  word-break: break-word;
+}
+pre code {
+  background-color: unset;
+  box-shadow: none;
+}
+.hljs {
+  /* this -15px margin offsets the usual margin given to a page. This way it looks like this:
+      |        |
+    | myCode     |
+      |        |
+
+    instead of:
+
+      |        |
+      | myCode |
+      |        |
+
+    might not be clear as ascii comment, but the **code words inside the code
+    block** are aligned with the page's boundaries; previously the code block
+    itself starts at the boundary, then has extra padding. Now the code words
+    themselves are aligned with the rest of the page's paragraphs' starting
+    point
+   */
+  margin-left: -15px;
+  margin-right: -15px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 15px;
+  overflow: auto;
+  background-color: $codeColor;
+  font-size: 15px;
+  line-height: 23px;
+
+  /* respect the section's max width, from .mainContainer .wrapper p */
+  max-width: 50rem;
+}
+.hljs.javascript {
+  background-color: rgba(0, 85, 170, 0.03);
+}
+.hljs .comment {
+  opacity: 0.7;
+}
+
+@media (max-width: 736px) {
+  .hljs {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 20px;
+    /* on small screens, the code block completely occupies the width of the
+      view. No need for left/right borders */
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+/* 3. Homepage changes */
+#redirectMessage {
+  font-size: 30px;
+  line-height: 30px;
+  padding-top: 100px;
+  margin: auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+#redirectBanner {
+  background: #808080;
+  color: #fff;
+  display: none;
+  font-weight: 300;
+  margin: auto;
+  padding: 10px 0;
+  text-align: center;
+}
+
+#redirectBanner a {
+  color: #fff;
+  opacity: 0.6;
+}
+
+#redirectBanner a:hover {
+  opacity: 1;
+}
+
+.homeWrapperWrapper {
+  background-color: #f6f4f4;
+  overflow: hidden;
+  position: relative;
+}
+
+.homeWrapperInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px 0px 20px 0px;
+}
+
+.homeCodeSnippet {
+  background-color: transparent;
+  border: none;
+  text-align: initial;
+  padding-top: 20px;
+}
+
+.homeTagLine {
+  font-size: 24px;
+  font-weight: 300;
+  max-width: 500px;
+  line-height: 1.5em;
+}
+
+.homeThreePoints {
+  padding-top: 20px;
+}
+
+.quickStartAndExamples {
+  /* homeThreePoints + blockElement have 30 padding, so we should have 30 here too */
+  padding-top: 30px;
+  /* block padding of 80px is too huge */
+  padding-bottom: 30px;
+}
+
+.quickStartAndExamples .wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 1024px;
+}
+
+@media (max-width: 736px) {
+  .quickStartAndExamples .wrapper {
+    flex-direction: column;
+  }
+}
+
+/* companies page */
+.addCompanyButton {
+  margin-top: 2em;
+}
+
+@media (max-width: 1024px) {
+  .homeWrapperInner {
+    flex-direction: column;
+  }
+
+  .projectTitle {
+    font-size: 40px;
+  }
+}
+/* mobile */
+@media (max-width: 480px) {
+  .projectTitle {
+    font-size: 30px;
+  }
+
+  .homeCodeSnippet .hljs {
+    font-size: 13px;
+  }
+}
+
+.homeCodeSnippet .hljs {
+  background-color: transparent;
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  color: rgb(57, 57, 57);
+  font-size: 14px;
+}
+
+.getStarted {
+  background-color: $primaryColor;
+  color: white;
+  /* buttons have 10px margin. Make the right padding 10px too so that it looks nicely spaced beside the Tutorial button */
+  margin: 0 10px 0 0;
+}

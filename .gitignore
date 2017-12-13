@@ -3,3 +3,6 @@ node_modules
 dist
 compiled
 .DS_Store
+website/build
+website/node_modules
+website/.netlify
