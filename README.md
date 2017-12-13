@@ -338,10 +338,10 @@ const Example = () =>
   <Vibration
     render={({ vibrate, persistentVibrate, cancelVibrations }) =>
       <div>
-        <button onClick={() => props.vibrate(100)}>vibrate for 100ms</button>
-        <button onClick={() => props.vibrate([100, 200, 100, 200, 100])}>vibrate 3x 100ms with 200ms breaks</button>
-        <button onClick={() => props.persistentVibrate(300, 1000)}>vibrate 300ms, each second</button>
-        <button onClick={() => props.cancelVibrations()}>cancel all vibrations</button>
+        <button onClick={() => vibrate(100)}>vibrate for 100ms</button>
+        <button onClick={() => vibrate([100, 200, 100, 200, 100])}>vibrate 3x 100ms with 200ms breaks</button>
+        <button onClick={() => persistentVibrate(300, 1000)}>vibrate 300ms, each second</button>
+        <button onClick={() => cancelVibrations()}>cancel all vibrations</button>
       </div>
     }
   />
@@ -356,10 +356,10 @@ import { withVibration } from 'react-fns'
 
 const Inner = ({ vibrate, persistentVibrate, cancelVibrations }) => (
   <div>
-    <button onClick={() => props.vibrate(100)}>vibrate for 100ms</button>
-    <button onClick={() => props.vibrate([100, 200, 100, 200, 100])}>vibrate 3 x 100ms with 200ms breaks</button>
-    <button onClick={() => props.persistentVibrate(300, 1000)}>vibrate 300ms, each second</button>
-    <button onClick={() => props.cancelVibrations()}>cancel all vibrations</button>
+    <button onClick={() => vibrate(100)}>vibrate for 100ms</button>
+    <button onClick={() => vibrate([100, 200, 100, 200, 100])}>vibrate 3 x 100ms with 200ms breaks</button>
+    <button onClick={() => persistentVibrate(300, 1000)}>vibrate 300ms, each second</button>
+    <button onClick={() => cancelVibrations()}>cancel all vibrations</button>
   </div>
 )
 
