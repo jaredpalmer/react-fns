@@ -74,6 +74,7 @@
     "ts-jest": "^20.0.10",
     "ts-lint": "^4.5.1",
     "tsc-watch": "1.0.8",
+    "tslint": "^5.8.0",
     "tslint-react": "^3.2.0",
     "typescript": "^2.4.2"
   },

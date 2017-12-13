@@ -11,3 +11,5 @@ try {
   (window as EventTarget).addEventListener('testPassive', noop, opts);
   (window as EventTarget).removeEventListener('testPassive', noop, opts);
 } catch (e) {}
+
+export const supportsVibrationAPI = navigator && 'vibrate' in navigator;
