@@ -37,10 +37,6 @@ _There's a lot more to do. The goal is to standardize almost every Web API on [M
     - [Scroll props](#scroll-props)
     - [`<Scroll render/>`](#scroll-render)
     - [`withScroll()`](#withscroll)
-  - [Vibration](#vibration)
-    - [Vibration props](#vibration-props)
-    - [`<Vibration render/>`](#vibration-render)
-    - [`withVibration()`](#withvibration)
   - [WindowSize](#windowsize)
     - [WindowSize props](#windowsize-props)
     - [`<WindowSize render/>`](#windowsize-render)
@@ -312,60 +308,6 @@ const Inner = ({ x, y }) => <div>Scroll Position: {x}, {y}</div>
 export default withScroll(Inner)
 ```
 
-## Vibration
-
-Functions that enable components to handle vibration of a device. See
-[MDN Vibration API](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)
-and [MDN Navigator.vibrate()](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate)
-for usage and browser support.
-Note that Chrome on Android only allows vibration to happen on user gestures, so this will only work if you trigger vibration on touches or other user input.
-
-### Vibration props
-
-- `vibrate(pattern)`: Vibrate the device with the given pattern.
-A number, or an array of numbers describing alternating periods of time in which the device is vibrating and not vibrating, in milliseconds.
-- `persistentVibrate(pattern[, interval])`: Vibrate the device persistently, until it is canceled.
-Optionally pass an interval that specifies how much time should pass between the start of each vibration pattern.
-If no interval is passed, it will vibrate the patterns back-to-back.
-- `cancelVibrations()`: Cancels any ongoing vibrations, as well as those scheduled with the `persistentVibrate()` method.
-
-### `<Vibration render/>`
-
-```js
-import { Vibration } from 'react-fns'
-
-const Example = () =>
-  <Vibration
-    render={({ vibrate, persistentVibrate, cancelVibrations }) =>
-      <div>
-        <button onClick={() => props.vibrate(100)}>vibrate for 100ms</button>
-        <button onClick={() => props.vibrate([100, 200, 100, 200, 100])}>vibrate 3x 100ms with 200ms breaks</button>
-        <button onClick={() => props.persistentVibrate(300, 1000)}>vibrate 300ms, each second</button>
-        <button onClick={() => props.cancelVibrations()}>cancel all vibrations</button>
-      </div>
-    }
-  />
-
-export default Example
-```
-
-### `withVibration()`
-
-```js
-import { withVibration } from 'react-fns'
-
-const Inner = ({ vibrate, persistentVibrate, cancelVibrations }) => (
-  <div>
-    <button onClick={() => props.vibrate(100)}>vibrate for 100ms</button>
-    <button onClick={() => props.vibrate([100, 200, 100, 200, 100])}>vibrate 3 x 100ms with 200ms breaks</button>
-    <button onClick={() => props.persistentVibrate(300, 1000)}>vibrate 300ms, each second</button>
-    <button onClick={() => props.cancelVibrations()}>cancel all vibrations</button>
-  </div>
-)
-
-export default withVibration(Inner)
-```
-
 ## WindowSize
 
 ### WindowSize props
@@ -496,10 +438,9 @@ See https://developer.mozilla.org/en-US/docs/WebAPI for the full list
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
 | [<img src="https://avatars0.githubusercontent.com/u/92839?v=4" width="100px;"/><br /><sub><b>MICHAEL JACKSON</b></sub>](https://twitter.com/mjackson)<br />[🤔](#ideas-mjackson "Ideas, Planning, & Feedback") | [<img src="https://avatars2.githubusercontent.com/u/14926950?v=4" width="100px;"/><br /><sub><b>Pavel Prichodko</b></sub>](https://github.com/prichodko)<br />[💻](https://github.com/jaredpalmer/react-fns/commits?author=prichodko "Code") [📖](https://github.com/jaredpalmer/react-fns/commits?author=prichodko "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/7615?v=4" width="100px;"/><br /><sub><b>Richard Powell</b></sub>](https://github.com/rpowell)<br />[💻](https://github.com/jaredpalmer/react-fns/commits?author=rpowell "Code") | [<img src="https://avatars2.githubusercontent.com/u/3269550?v=4" width="100px;"/><br /><sub><b>Tim Brown</b></sub>](https://github.com/brimtown)<br />[📖](https://github.com/jaredpalmer/react-fns/commits?author=brimtown "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/8162598?v=4" width="100px;"/><br /><sub><b>Jack Moore</b></sub>](https://github.com/jtmthf)<br />[💻](https://github.com/jaredpalmer/react-fns/commits?author=jtmthf "Code") | [<img src="https://avatars0.githubusercontent.com/u/207870?v=4" width="100px;"/><br /><sub><b>Dayle Rees</b></sub>](http://www.daylerees.com)<br />[📖](https://github.com/jaredpalmer/react-fns/commits?author=daylerees "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/1520?v=4" width="100px;"/><br /><sub><b>Thomas Flemming</b></sub>](http://thomasflemming.no)<br />[📖](https://github.com/jaredpalmer/react-fns/commits?author=thomasfl "Documentation") |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars0.githubusercontent.com/u/5314713?v=4" width="100px;"/><br /><sub><b>Sam Kvale</b></sub>](http://skvale.github.io)<br />[🐛](https://github.com/jaredpalmer/react-fns/issues?q=author%3Askvale "Bug reports") [💻](https://github.com/jaredpalmer/react-fns/commits?author=skvale "Code") | [<img src="https://avatars0.githubusercontent.com/u/320910?v=4" width="100px;"/><br /><sub><b>Rhys Powell</b></sub>](http://rpowell.me)<br />[💻](https://github.com/jaredpalmer/react-fns/commits?author=rpowelll "Code") | [<img src="https://avatars3.githubusercontent.com/u/5678122?v=4" width="100px;"/><br /><sub><b>Jeppe Reinhold</b></sub>](https://reinhold.is)<br />[💻](https://github.com/jaredpalmer/react-fns/commits?author=jreinhold "Code") [📖](https://github.com/jaredpalmer/react-fns/commits?author=jreinhold "Documentation") |
+| [<img src="https://avatars0.githubusercontent.com/u/5314713?v=4" width="100px;"/><br /><sub><b>Sam Kvale</b></sub>](http://skvale.github.io)<br />[🐛](https://github.com/jaredpalmer/react-fns/issues?q=author%3Askvale "Bug reports") [💻](https://github.com/jaredpalmer/react-fns/commits?author=skvale "Code") | [<img src="https://avatars0.githubusercontent.com/u/320910?v=4" width="100px;"/><br /><sub><b>Rhys Powell</b></sub>](http://rpowell.me)<br />[💻](https://github.com/jaredpalmer/react-fns/commits?author=rpowelll "Code") |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

@@ -13,4 +13,3 @@ export * from './GeoPosition';
 export * from './Media';
 export * from './WindowSize';
 export * from './Locales';
-export * from './Vibration';
