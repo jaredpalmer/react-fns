@@ -28,7 +28,7 @@ export const Mailto: React.SFC<MailtoProps> = ({
   bcc,
   body,
   children,
-  ...props,
+  ...props
 }) => {
   return (
     <a

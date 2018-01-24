@@ -19,7 +19,7 @@ export const Sms: React.SFC<SmsProps> = ({
   phone,
   body,
   children,
-  ...props,
+  ...props
 }) => {
   return (
     <a
