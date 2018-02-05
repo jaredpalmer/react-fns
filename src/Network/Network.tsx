@@ -29,6 +29,10 @@ export class Network extends React.Component<
   };
 
   componentDidMount() {
+    if (navigator) {
+      this.setState({ online: navigator.onLine });
+    }
+
     window.addEventListener('online', this.handleOnline);
     window.addEventListener('offline', this.handleOffline);
   }
