@@ -11,10 +11,12 @@ describe('<Network />', () => {
       ReactDOM.unmountComponentAtNode(node);
     });
 
-    it('receives { x, y } props', () => {
+    it('receives { online } props', () => {
       ReactDOM.render(
         <Network
-          render={props => expect(props).toEqual({ online: false }) || null}
+          render={props =>
+            console.log(props) || expect(props.online).toEqual(true) || null
+          }
         />,
         node
       );

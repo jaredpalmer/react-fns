@@ -18,7 +18,7 @@ export class Network extends React.Component<
   SharedRenderProps<NetworkProps>,
   NetworkProps
 > {
-  state: NetworkProps = { online: false };
+  state: NetworkProps = { online: navigator.onLine };
 
   handleOnline = () => {
     this.setState({ online: true, offlineAt: undefined });
@@ -29,7 +29,7 @@ export class Network extends React.Component<
   };
 
   componentDidMount() {
-    if (navigator) {
+    if (typeof window !== 'undefined' && navigator) {
       this.setState({ online: navigator.onLine });
     }
 

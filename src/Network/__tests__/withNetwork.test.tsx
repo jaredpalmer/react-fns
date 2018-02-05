@@ -14,7 +14,7 @@ describe('withNetwork()', () => {
     const hello = 'hi';
 
     const WrappedComponent = withNetwork<{ hello: string }>(
-      props => expect(props).toEqual({ online: false, hello }) || null
+      props => expect(props.online).toEqual(true) || null
     );
 
     ReactDOM.render(<WrappedComponent hello={hello} />, node);
