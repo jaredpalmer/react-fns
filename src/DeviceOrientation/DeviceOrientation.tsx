@@ -7,7 +7,7 @@
 
 import * as React from 'react';
 import { SharedRenderProps } from '../types';
-import { isEmptyChildren } from '../utils';
+import { render } from '../utils';
 
 export interface DeviceOrientationProps {
   alpha: number | null;
@@ -52,15 +52,6 @@ export class DeviceOrientation extends React.Component<
   }
 
   render() {
-    const { render, component, children } = this.props;
-    return component
-      ? React.createElement(component as any, this.state)
-      : render
-        ? (render as any)(this.state)
-        : children // children come last, always called
-          ? typeof children === 'function'
-            ? children(this.state)
-            : !isEmptyChildren(children) ? React.Children.only(children) : null
-          : null;
+    return render(this.props, this.state);
   }
 }
