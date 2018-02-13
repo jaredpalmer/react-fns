@@ -7,4 +7,5 @@
 
 export * from './isEmptyChildren';
 export * from './debounce';
+export * from './render';
 export * from './throttle';
