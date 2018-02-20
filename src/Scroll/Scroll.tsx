@@ -31,7 +31,7 @@ export class Scroll extends React.Component<
   state: ScrollProps = { x: 0, y: 0 };
 
   handleWindowScroll = throttle(() => {
-    this.setState({ x: window.scrollX, y: window.scrollY });
+    this.setState({ x: window.pageXOffset, y: window.pageYOffset });
   }, this.props.throttle!);
 
   componentDidMount() {
