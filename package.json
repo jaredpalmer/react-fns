@@ -64,7 +64,6 @@
     "rollup-plugin-filesize": "^1.4.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-replace": "^1.1.1",
-    "rollup-plugin-resolve": "0.0.1-predev.1",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-uglify": "^2.0.1",
     "ts-jest": "^20.0.10",
