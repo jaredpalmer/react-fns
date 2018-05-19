@@ -37,9 +37,9 @@ title: API Reference
   * [`<Locales render/>`](#locales-render)
   * [`withLocales()`](#withlocales)
 * [Utility Components](#utility-components)
-  * [`<Mailto />`](#mailto-)
+  * [`<Mailto />`](#mailto)
     * [Mailto props](#mailto-props)
-  * [`<Sms />`](#sms-)
+  * [`<Sms />`](#sms)
     * [Sms props](#sms-props)
 
 ## DeviceMotion
