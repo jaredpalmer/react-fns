@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.es6.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "test": "jest --env=jsdom",
     "test:watch": "npm run test -- --watch",
