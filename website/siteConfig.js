@@ -37,8 +37,8 @@ const siteConfig = {
     theme: 'github',
   },
   algolia: {
-    apiKey: '2d4ae48c321d57af794830e115f45864',
-    indexName: 'esy',
+    apiKey: '3a8847aa925527a21be796bd981526c6',
+    indexName: 'react-fns',
   },
   markdownPlugins: [
     // ignore `<!-- prettier-ignore -->` before passing into Docusaurus to avoid mis-parsing (#3322)
