@@ -14,7 +14,8 @@ describe('withScroll()', () => {
     const hello = 'hi';
 
     const WrappedComponent = withWindowSize<{ hello: string }>(
-      props => expect(props).toEqual({ width: 0, height: 0, hello }) || null
+      props =>
+        expect(props).toEqual({ width: 1024, height: 768, hello }) || null
     );
 
     ReactDOM.render(<WrappedComponent hello={hello} />, node);
@@ -31,7 +32,7 @@ describe('withScroll()', () => {
 
     ReactDOM.render(<WrappedComponent hello={hello} />, node);
 
-    expect(node.innerHTML.includes('0')).toBe(true);
+    expect(node.innerHTML.includes('1024')).toBe(true);
     expect(node.innerHTML.includes('hi')).toBe(true);
   });
 });

@@ -27,14 +27,16 @@ export class WindowSize extends React.Component<
     throttle: 100,
   };
 
-  state: WindowSizeProps = { width: 0, height: 0 };
+  state: WindowSizeProps = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
 
   handleWindowSize = throttle(() => {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }, this.props.throttle!);
 
   componentDidMount() {
-    this.handleWindowSize();
     window.addEventListener('resize', this.handleWindowSize);
   }
 
