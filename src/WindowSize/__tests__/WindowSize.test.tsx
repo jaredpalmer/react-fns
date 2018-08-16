@@ -15,7 +15,7 @@ describe('<WindowSize />', () => {
       ReactDOM.render(
         <WindowSize
           render={sizeProps =>
-            expect(sizeProps).toEqual({ width: 0, height: 0 }) || null
+            expect(sizeProps).toEqual({ width: 1024, height: 768 }) || null
           }
         />,
         node
