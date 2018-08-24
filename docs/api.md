@@ -277,12 +277,12 @@ Not implemented
 
 ### Scroll props
 
-* `x`: Horizontal scroll in pixels (`window.scrollX`)
-* `y`: Vertical scroll in pixels (`window.scrollY`)
+* `x`: Horizontal scroll in pixels (`window.pageXOffset`)
+* `y`: Vertical scroll in pixels (`window.pageYOffset`)
 
 ### `<Scroll render/>`
 
-Returns `window.scrollX` and `window.scrollY`.
+Returns `window.pageYOffset` and `window.pageXOffset`.
 
 ```javascript
 import { Scroll } from 'react-fns';
@@ -302,7 +302,7 @@ export default Example;
 
 ### `withScroll()`
 
-Injects `window.scrollX` and `window.scrollY` as `x` and `y` props.
+Injects `window.pageYOffset` and `window.pageXOffset` as `x` and `y` props.
 
 ```javascript
 import { withScroll } from 'react-fns';
