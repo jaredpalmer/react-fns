@@ -1,101 +1,62 @@
 {
-  "name": "react-fns",
-  "version": "1.4.0",
-  "description": "Modern React components, hoc's, and utilities functions.",
+  "name": "the-platform",
+  "version": "0.5.0",
+  "author": "Jared Palmer <jared@palmer.net>",
+  "repository": "palmerhq/the-platform",
+  "keywords": [
+    "react",
+    "react-dom",
+    "suspense"
+  ],
+  "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.es6.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": false,
+  "source": "src/index.js",
+  "files": [
+    "dist",
+    "Audio.js",
+    "Video.js",
+    "Img.js",
+    "Script.js"
+  ],
   "scripts": {
-    "test": "jest --env=jsdom",
-    "test:watch": "npm run test -- --watch",
-    "start": "cross-env NODE_ENV=development tsc-watch --onSuccess \"rollup -c\"",
-    "prebuild": "rimraf dist",
-    "build": "tsc && cross-env NODE_ENV=production rollup -c && cross-env NODE_ENV=development rollup -c && rimraf compiled",
-    "prepublish": "npm run build",
-    "format": "prettier --trailing-comma es5 --single-quote  --write 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
-    "doctoc": "doctoc .",
+    "start": "NODE_ENV=development babel -w ./src --out-dir dist",
+    "build": "rimraf dist && NODE_ENV=production babel ./src --out-dir dist",
+    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'exampe/src/**/*' 'example/README.md' 'README.md'",
+    "test": "echo yolo",
+    "prepare": "npm run build",
+    "deploy": "np",
     "precommit": "lint-staged"
   },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-cache": "^2.0.0-alpha.0",
+    "react-dom": ">=16"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "np": "^3.0.4",
+    "prettier": "^1.14.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "rimraf": "^2.6.2"
+  },
   "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "prettier --write",
+    "**/*.{js,jsx}": [
+      "npm run format",
       "git add"
     ]
   },
   "prettier": {
     "trailingComma": "es5",
-    "singleQuote": true
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jaredpalmer/react-fns.git"
-  },
-  "keywords": [
-    "react",
-    "react-fns",
-    "render-props",
-    "hoc"
-  ],
-  "author": "Jared Palmer <jared@palmer.net>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jaredpalmer/react-fns/issues"
-  },
-  "homepage": "https://github.com/jaredpalmer/react-fns#readme",
-  "devDependencies": {
-    "@types/jest": "20.0.6",
-    "@types/node": "^8.0.22",
-    "@types/prop-types": "15.5.1",
-    "@types/qs": "^6.5.0",
-    "@types/react": "16.0.2",
-    "@types/react-dom": "15.5.1",
-    "@types/react-test-renderer": "15.5.2",
-    "cross-env": "5.0.5",
-    "doctoc": "^1.3.0",
-    "husky": "^0.14.3",
-    "jest": "^20.0.4",
-    "lint-staged": "^5.0.0",
-    "prettier": "^1.10.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-test-renderer": "^15.6.1",
-    "rollup": "^0.47.6",
-    "rollup-plugin-commonjs": "^8.1.0",
-    "rollup-plugin-filesize": "^1.4.2",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-replace": "^1.1.1",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "rollup-plugin-uglify": "^2.0.1",
-    "ts-jest": "^20.0.10",
-    "ts-lint": "^4.5.1",
-    "tsc-watch": "1.0.8",
-    "tslint": "^5.9.1",
-    "tslint-react": "^3.2.0",
-    "typescript": "^2.4.2"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}"
-    ],
-    "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testMatch": [
-      "<rootDir>/src/**/?(*.)(spec|test).ts?(x)"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ]
-  },
-  "dependencies": {
-    "qs": "^6.5.1",
-    "react-media": "^1.6.1"
+    "singleQuote": true,
+    "semi": true
   }
 }

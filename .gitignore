@@ -1,8 +1,5 @@
 node_modules
-*.log
+temp
 dist
-compiled
-.DS_Store
-website/build
-website/node_modules
-website/.netlify
+*.log
+example/.cache
