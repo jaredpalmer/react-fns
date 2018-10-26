@@ -4,3 +4,4 @@ dist
 *.log
 example/.cache
 .DS_Store
+.vscode

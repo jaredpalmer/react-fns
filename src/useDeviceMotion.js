@@ -1,10 +1,27 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 
-export function useDeviceMotion(props) {
-  const [state, setState] = useState({});
+export const useDeviceMotion = () => {
+  const [motion, setMotion] = React.useState({
+    acceleration: {
+      x: null,
+      y: null,
+      z: null,
+    },
+    accelerationIncludingGravity: {
+      x: null,
+      y: null,
+      z: null,
+    },
+    rotationRate: {
+      alpha: null,
+      beta: null,
+      gamma: null,
+    },
+    interval: 0,
+  });
 
-  handleDeviceMotion = e => {
-    setState({
+  const handle = e => {
+    setMotion({
       acceleration: e.acceleration,
       accelerationIncludingGravity: e.accelerationIncludingGravity,
       rotationRate: e.rotationRate,
@@ -12,11 +29,13 @@ export function useDeviceMotion(props) {
     });
   };
 
-  useEffect(() => {
-    window.addEventListener('devicemotion', handleDeviceMotion, true);
+  React.useEffect(() => {
+    window.addEventListener('devicemotion', handle);
+
     return () => {
-      window.removeEventListener('devicemotion', handleDeviceMotion);
+      window.removeEventListener('devicemotion', handle);
     };
-  });
-  return state;
-}
+  }, []);
+
+  return motion;
+};

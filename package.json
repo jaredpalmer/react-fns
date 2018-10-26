@@ -58,5 +58,9 @@
     "trailingComma": "es5",
     "singleQuote": true,
     "semi": true
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.117",
+    "lodash": "^4.17.11"
   }
 }
