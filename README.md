@@ -229,9 +229,9 @@ function App() {
   return (
     <div>
       <h1>Hello</h1>
-      <React.Placeholder delayMs={300} fallback={'loading...'}>
+      <React.Suspense maxDuration={300} fallback={'loading...'}>
         <Img src="https://source.unsplash.com/random/4000x2000" />
-      </React.Placeholder>
+      </React.Suspense>
     </div>
   );
 }
@@ -256,11 +256,11 @@ function App() {
   return (
     <div>
       <h1>Load Stripe.js Async</h1>
-      <React.Placeholder delayMs={300} fallback={'loading...'}>
+      <React.Suspense maxDuration={300} fallback={'loading...'}>
         <Script src="https://js.stripe.com/v3/" async>
           {() => console.log(window.Stripe) || null}
         </Script>
-      </React.Placeholder>
+      </React.Suspense>
     </div>
   );
 }
@@ -284,13 +284,13 @@ function App() {
   return (
     <div>
       <h1>Ken Wheeler on a Scooter</h1>
-      <React.Placeholder delayMs={300} fallback={'loading...'}>
+      <React.Suspense maxDuration={300} fallback={'loading...'}>
         <Video
           src="https://video.twimg.com/ext_tw_video/1029780437437014016/pu/vid/360x640/QLNTqYaYtkx9AbeH.mp4?tag=5"
           preload="auto"
           autoPlay
         />
-      </React.Placeholder>
+      </React.Suspense>
     </div>
   );
 }
@@ -315,9 +315,9 @@ function App() {
     <div>
       <h1>Meavy Boy - Compassion</h1>
       {/* source: http://freemusicarchive.org/music/Meavy_Boy/EP_71_to_20/Compassion */}
-      <React.Placeholder delayMs={300} fallback={'loading...'}>
+      <React.Suspense maxDuration={300} fallback={'loading...'}>
         <Audio src="https://file-dnzavydoqu.now.sh/" preload="auto" autoPlay />
-      </React.Placeholder>
+      </React.Suspense>
     </div>
   );
 }
@@ -347,10 +347,10 @@ function App() {
   return (
     <div>
       <h1>Preload</h1>
-      <React.Placeholder delayMs={300} fallback={'loading...'}>
+      <React.Suspense maxDuration={300} fallback={'loading...'}>
         <Preload href="https://js.stripe.com/v3/" rel="preload" as="script" />
         <Script src="https://js.stripe.com/v3/" async />
-      </React.Placeholder>
+      </React.Suspense>
     </div>
   );
 }
@@ -374,9 +374,38 @@ function App() {
   return (
     <div>
       <h1>Styles</h1>
-      <React.Placeholder delayMs={300} fallback={'loading...'}>
+      <React.Suspense maxDuration={300} fallback={'loading...'}>
         <Stylesheet href="style.css" />
-      </React.Placeholder>
+      </React.Suspense>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### `useStylesheet({ href: string })`
+
+This will throw a promise (must use with Suspense).
+
+```jsx
+import React from 'react';
+import { useStylesheet } from 'the-platform';
+
+function WithCoolStylesheet({ children }) {
+  const _unused = useStylesheet({ href: 'normalize.css' });
+  return <>{children}</>;
+}
+
+function App() {
+  return (
+    <div>
+      <h1>Styles</h1>
+      <React.Suspense fallback={'waiting for styles...'}>
+        <WithCoolStylesheet>
+          <h1>woot!</h1>
+        <WithCoolStylesheet>
+      </React.Suspense>
     </div>
   );
 }
