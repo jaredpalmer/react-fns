@@ -58,5 +58,8 @@
     "trailingComma": "es5",
     "singleQuote": true,
     "semi": true
+  },
+  "dependencies": {
+    "json2mq": "^0.2.0"
   }
 }
