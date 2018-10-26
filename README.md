@@ -135,6 +135,31 @@ const Example = () => {
 export default Example;
 ```
 
+## Media
+
+- `matches: boolean`: True if the media query matches, false otherwise.
+
+### `useMedia(query: string | object)`
+
+Takes a media query string or object (parsed by [json2mq](https://github.com/akiran/json2mq)) and returns whether the media query matched.
+
+```js
+import React from 'react';
+import { useMedia } from 'the-platform';
+
+const Example = () => {
+  const small = useMedia('(min-width: 400px)');
+  const medium = useMediai({ minWidth: 800 });
+
+  return (
+    <div>
+      {small && 'Small'}
+      {medium && 'Medium'}
+    </div>
+  );
+};
+```
+
 ## Scroll
 
 - `x`: Horizontal scroll in pixels (`window.pageXOffset`)
