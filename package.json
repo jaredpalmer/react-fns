@@ -60,7 +60,7 @@
     "semi": true
   },
   "dependencies": {
-    "@types/lodash": "^4.14.117",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "react-cache": "^2.0.0-alpha.0"
   }
 }

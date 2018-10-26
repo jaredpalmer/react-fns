@@ -8,10 +8,6 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@types/lodash@^4.14.117":
-  version "4.14.117"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.117.tgz#695a7f514182771a1e0f4345d189052ee33c8778"
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -2601,6 +2597,10 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-cache@^2.0.0-alpha.0:
+  version "2.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/react-cache/-/react-cache-2.0.0-alpha.0.tgz#d02d16a4565fd9f12478a2a41e980ba4fcbab4d5"
 
 react-dom@^16.4.2:
   version "16.4.2"
