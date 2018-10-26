@@ -1,3 +1,5 @@
+![Repo Banner](./.github/repo-banner.png)
+
 # The Platform
 
 Browser API's turned into React Hooks and Suspense-friendly React elements for common situations.
