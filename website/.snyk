@@ -1,0 +1,42 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.3
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:hawk:20160119':
+    - docusaurus > highlight.js > gear-lib > less > request > hawk:
+        patched: '2019-02-26T02:42:18.328Z'
+  'npm:http-signature:20150122':
+    - docusaurus > highlight.js > gear-lib > less > request > http-signature:
+        patched: '2019-02-26T02:42:18.328Z'
+  'npm:mime:20170907':
+    - docusaurus > highlight.js > gear-lib > mime:
+        patched: '2019-02-26T02:42:18.328Z'
+    - docusaurus > highlight.js > gear-lib > less > mime:
+        patched: '2019-02-26T02:42:18.328Z'
+    - docusaurus > highlight.js > gear-lib > less > request > form-data > mime:
+        patched: '2019-02-26T02:42:18.328Z'
+  'npm:minimatch:20160620':
+    - docusaurus > highlight.js > gear > liftoff > findup-sync > glob > minimatch:
+        patched: '2019-02-26T02:42:18.328Z'
+    - docusaurus > highlight.js > gear-lib > gear > liftoff > findup-sync > glob > minimatch:
+        patched: '2019-02-26T02:42:18.328Z'
+    - docusaurus > highlight.js > gear-lib > glob > minimatch:
+        patched: '2019-02-26T02:42:18.328Z'
+    - docusaurus > highlight.js > gear-lib > jslint > glob > minimatch:
+        patched: '2019-02-26T02:42:18.328Z'
+    - docusaurus > highlight.js > gear-lib > jshint > cli > glob > minimatch:
+        patched: '2019-02-26T02:42:18.328Z'
+    - docusaurus > highlight.js > gear-lib > jshint > minimatch:
+        patched: '2019-02-26T02:42:18.328Z'
+  'npm:request:20160119':
+    - docusaurus > highlight.js > gear-lib > less > request:
+        patched: '2019-02-26T02:42:18.328Z'
+  'npm:tunnel-agent:20170305':
+    - docusaurus > highlight.js > gear-lib > less > request > tunnel-agent:
+        patched: '2019-02-26T02:42:18.328Z'
+  'npm:uglify-js:20151024':
+    - docusaurus > highlight.js > gear-lib > handlebars > uglify-js:
+        patched: '2019-02-26T02:42:18.328Z'
+    - docusaurus > highlight.js > gear-lib > uglify-js:
+        patched: '2019-02-26T02:42:18.328Z'
