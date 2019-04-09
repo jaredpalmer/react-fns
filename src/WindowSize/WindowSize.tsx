@@ -33,6 +33,7 @@ export class WindowSize extends React.Component<
   };
 
   handleWindowSize = throttle(() => {
+    if (this.unmounted) return;
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }, this.props.throttle!);
 
@@ -42,6 +43,7 @@ export class WindowSize extends React.Component<
   }
 
   componentWillUnmount() {
+    this.unmounted = true;
     window.removeEventListener('resize', this.handleWindowSize);
   }
 
