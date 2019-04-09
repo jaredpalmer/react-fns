@@ -26,6 +26,8 @@ export class WindowSize extends React.Component<
   static defaultProps: Partial<WindowSizeConfig> = {
     throttle: 100,
   };
+  
+  unmounted: boolean;
 
   state: WindowSizeProps = {
     width: window.innerWidth,
