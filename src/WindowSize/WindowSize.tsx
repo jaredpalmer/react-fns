@@ -26,6 +26,8 @@ export class WindowSize extends React.Component<
   static defaultProps: Partial<WindowSizeConfig> = {
     throttle: 100,
   };
+  
+  unmounted: boolean;
 
   state: WindowSizeProps = {
     width: window.innerWidth,
@@ -33,6 +35,7 @@ export class WindowSize extends React.Component<
   };
 
   handleWindowSize = throttle(() => {
+    if (this.unmounted) return;
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }, this.props.throttle!);
 
@@ -42,6 +45,7 @@ export class WindowSize extends React.Component<
   }
 
   componentWillUnmount() {
+    this.unmounted = true;
     window.removeEventListener('resize', this.handleWindowSize);
   }
 
