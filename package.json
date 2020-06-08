@@ -96,6 +96,6 @@
   },
   "dependencies": {
     "qs": "^6.5.1",
-    "react-media": "^1.6.1"
+    "react-media": "^1.10.0"
   }
 }
