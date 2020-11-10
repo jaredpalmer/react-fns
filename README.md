@@ -17,6 +17,7 @@ npm i react-fns --save
 
 * [Website](https://react-fns.netlify.com)
 * [API Reference](https://react-fns.netlify.com/docs/en/api.html)
+* [Community Discord](https://discord.com/invite/RevdZTYMzr)
 
 ## Author
 
